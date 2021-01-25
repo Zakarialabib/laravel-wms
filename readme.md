@@ -8,8 +8,8 @@
 -Check Deliveries status with Tracking code<br>
 
 
-Thanks to
 <p align="center">
+Thanks to
 <a href="https://laravel.com">Laravel</a> <br>
 <a href="https://tailwindcss.com">tailwindcss</a><br>
 </p>
