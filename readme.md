@@ -5,11 +5,11 @@
 -<br>
 -<br>
 -<br>
--Check Deliveries status with Tracking code<br>
+- Check Deliveries status with Tracking code<br>
 
 
 <p align="center">
-Thanks to
+<h3>Thanks to </h3><br>
 <a href="https://laravel.com">Laravel</a> <br>
 <a href="https://tailwindcss.com">tailwindcss</a><br>
 </p>
