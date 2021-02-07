@@ -21,4 +21,9 @@ class Deliveries extends Model
         'status',
         'description',
     ];
+
+    public function sale()
+    {
+        return $this->belongsTo(Sales::class);
+    }
 }

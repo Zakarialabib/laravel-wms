@@ -40,7 +40,7 @@
                         <td class="border px-4 py-2">{{ $post->slug }}</td>
 
                         <td class="border px-4 py-2">
-                        <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('posts-show',$post->id) }}">Voir</a>
+                        <a class="bg-green-550 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('posts-show',$post->id) }}">Voir</a>
                         <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Modifier</button>
                             <button wire:click="delete({{ $post->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Supprimer</button>
                         </td>

@@ -24,7 +24,11 @@
 
                         <div class="form-group">
                             <label for="product_id">Product ID* </label>
-                            <input class="form-control" type="number" name="product_id" required>
+                            <select class="form-control" name="product_id" required>
+                                @foreach ($products as $product)
+                                <option value="{{$product->id}}" >{{ $product->name }}</option>
+                                @endforeach
+                                </select>
                         </div>
 
             <!--   
@@ -39,13 +43,21 @@
 
                           -->
                         
-
                         <div class="form-group">
                             <label for="status">status* </label>
                             <select class="form-control" name="status">
                             <option ></option>
                             <option name="status" value='paid'>Paid</option>
                             <option name="status" value='not-paid'>Not paid</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user_id">Livreur* </label>
+                            <select class="form-control" name="user_id">
+                            @foreach ($users as $user)
+                            <option value="{{$user->id}}" >{{ $user->name }}</option>
+                            @endforeach
                             </select>
                         </div>
 
@@ -72,6 +84,7 @@
                                     <tr>
                                         <td>ID</td>
                                         <td>Product ID</td>
+                                        <td>DeliveryMan</td>
                                         <td>Quantity</td>
                                         <td>Status</td>
                                         <td>Created At</td>
@@ -83,7 +96,8 @@
                                     @foreach($sales as $sale)
                                     <tr>
                                         <td>{{$sale->id}}</td>
-                                        <td>{{$sale->product_id}}</td>
+                                        <td>{{$product->name}}</td>
+                                        <td>{{$user->name}}</td>
                                         <td>{{$sale->quantity}}</td>
                                         <td>{{$sale->status}}</td>
                                         <td>{{$sale->created_at}}</td>

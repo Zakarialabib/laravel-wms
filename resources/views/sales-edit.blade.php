@@ -28,6 +28,15 @@
                             <label for="quantity">Quantity* </label>
                             <input class="form-control" type="text" name="quantity" value="{{$sale->quantity}}" required>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="user_id">Livreur* </label>
+                            <select class="form-control" name="user_id">
+                            @foreach ($users as $user)
+                            <option value="{{$user->id}}" >{{ $user->name }}</option>
+                            @endforeach
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <button class="btn btn-primary" type="submit">Submit</button>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sales;
 use App\Models\Products;
+use App\Models\User;
+use App\Models\Deliveries;
 use App\Models\Setting;
 
 class SalesController extends Controller
@@ -16,12 +18,14 @@ class SalesController extends Controller
         if (Products::where('id', '=', $request->get('product_id'))->count() > 0) {
             $this->validate($request, [
                 'product_id' => 'required',
+                'user_id' => 'required',
                 'status' => 'required',
                 'quantity' => 'required|integer|min:0'
             ]);
 
             $sale = new Sales([
                 'product_id' => $request->get('product_id'),
+                'user_id' => $request->get('user_id'),
                 'status' => $request->get('quantity'),
                 'quantity' => $request->get('quantity')
 
@@ -36,19 +40,22 @@ class SalesController extends Controller
     public function edit($id)
     {
         $sale = Sales::find($id);
-        return view('sales-edit', compact('sale'));
+        $users = User::all();
+        return view('sales-edit', compact('sale','users'));
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'product_id' => 'required',
+            'user_id' => 'required',
             'status' => 'required',
             'quantity' => 'required|integer|min:0'
         ]);
 
         $sale = Sales::find($id);
         $sale->product_id = $request->get('product_id');
+        $sale->product_id = $request->get('user_id');
         $sale->status = $request->get('status');
         $sale->quantity = $request->get('quantity');
 
@@ -76,8 +83,11 @@ class SalesController extends Controller
     public function index()
     {
         $sales = Sales::all();
+        $deliveries = Deliveries::all();
+        $products = Products::all();
+        $users = User::all();
         $settings = Setting::all();
 
-        return view('sales', compact('sales', 'settings'));
+        return view('sales', compact('sales', 'deliveries', 'products', 'users', 'settings'));
     }
 }

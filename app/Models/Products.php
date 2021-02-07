@@ -14,4 +14,9 @@ class Products extends Model
         'image',
         
     ];
+    
+    public function sale()
+    {
+        return $this->belongsTo(Sales::class);
+    }
 }
