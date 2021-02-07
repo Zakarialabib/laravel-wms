@@ -28,3 +28,12 @@ php artisan migrate
 </p>
 
 
+<p align="center">
+<h3>Thanks to </h3><br>
+<a href="https://laravel.com">Laravel</a> <br>
+<a href="https://tailwindcss.com">tailwindcss</a><br>
+</p>
+
+    
+    
+    
