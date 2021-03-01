@@ -23,4 +23,9 @@ class Sales extends Model
     {
         return $this->hasMany(Products::class);
     }
+
+    public function delivery()
+    {
+        return $this->hasMany(Deliveries::class);
+    }
 }

@@ -15,7 +15,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Logo</label>
-                        <input class="form-control" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Favicon</label>
-                        <input class="form-control" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
                     </div>
                 </div>
             </div>

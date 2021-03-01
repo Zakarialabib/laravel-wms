@@ -26,7 +26,7 @@ class SalesController extends Controller
             $sale = new Sales([
                 'product_id' => $request->get('product_id'),
                 'user_id' => $request->get('user_id'),
-                'status' => $request->get('quantity'),
+                'status' => $request->get('status'),
                 'quantity' => $request->get('quantity')
 
             ]);

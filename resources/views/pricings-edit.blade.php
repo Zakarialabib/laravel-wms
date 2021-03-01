@@ -20,21 +20,21 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="form-control" type="text" name="region" value="{{$pricing->region}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" value="{{$pricing->region}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Ville* </label>
-                            <input class="form-control" type="text" name="city" value="{{$pricing->city}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" value="{{$pricing->city}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Tarif* </label>
-                            <input class="form-control" type="text" name="price" value="{{$pricing->price}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" value="{{$pricing->price}}" required>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Enregistrer</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Enregistrer</button>
                         </div>
                     </form>
                 </div>

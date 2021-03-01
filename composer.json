@@ -21,8 +21,10 @@
         "laravel/jetstream": "^2.1",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
+        "laravelcollective/html": "^6.2",
         "livewire/livewire": "^2.3",
         "owenvoke/blade-fontawesome": "^1.6",
+        "spatie/laravel-permission": "^3.17",
         "twbs/bootstrap": "4.5.3"
     },
     "require-dev": {

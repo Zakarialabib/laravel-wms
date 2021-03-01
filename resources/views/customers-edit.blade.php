@@ -21,27 +21,27 @@
 
                         <div class="form-group">
                             <label for="name">name* </label>
-                            <input class="form-control" type="text" name="name" value="{{$customer->name}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$customer->name}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">phone* </label>
-                            <input class="form-control" type="text" name="phone" value="{{$customer->phone}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="phone" value="{{$customer->phone}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">email* </label>
-                            <input class="form-control" type="text" name="email" value="{{$customer->email}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" value="{{$customer->email}}" required>
                         </div>
 
 
                         <div class="form-group">
                             <label for="address">address* </label>
-                            <input class="form-control" type="text" name="address" value="{{$customer->address}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$customer->address}}" required>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

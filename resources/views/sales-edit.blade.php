@@ -21,17 +21,12 @@
 
                         <div class="form-group">
                             <label for="product_id">Product ID* </label>
-                            <input class="form-control" type="number" name="product_id" value="{{$sale->product_id}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="product_id" value="{{$sale->product_id}}" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="quantity">Quantity* </label>
-                            <input class="form-control" type="text" name="quantity" value="{{$sale->quantity}}" required>
-                        </div>
-                        
-                        <div class="form-group">
                             <label for="user_id">Livreur* </label>
-                            <select class="form-control" name="user_id">
+                            <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="user_id">
                             @foreach ($users as $user)
                             <option value="{{$user->id}}" >{{ $user->name }}</option>
                             @endforeach
@@ -39,7 +34,23 @@
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <label for="status">status* </label>
+                            <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"  name="status">
+                            <option name="status" value="{{$sale->status}}" >{{$sale->status}}</option>
+                            <option name="status" value='paid'>Paid</option>
+                            <option name="status" value='not-paid'>Not paid</option>
+                            </select>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity* </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="quantity" value="{{$sale->quantity}}" required>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

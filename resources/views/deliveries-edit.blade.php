@@ -21,32 +21,32 @@
 
                         <div class="form-group">
                             <label for="sale_id">Sale ID* </label>
-                            <input class="form-control" type="number" name="sale_id" value="{{$delivery->sale_id}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="sale_id" value="{{$delivery->sale_id}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Recipient* </label>
-                            <input class="form-control" type="text" name="recipient" value="{{$delivery->recipient}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="recipient" value="{{$delivery->recipient}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address* </label>
-                            <input class="form-control" type="text" name="address" value="{{$delivery->address}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$delivery->address}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="expected_arrival">Expected Arrival* </label>
-                            <input class="form-control" type="date" name="expected_arrival" value="{{$delivery->expected_arrival}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" name="expected_arrival" value="{{$delivery->expected_arrival}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="actual_arrival">Actual Arrival </label>
-                            <input class="form-control" type="date" name="actual_arrival" value="{{$delivery->actual_arrival}}">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" name="actual_arrival" value="{{$delivery->actual_arrival}}">
                         </div>
 
                         <div class="form-group">
                             <label for="status">Delivery Status* </label>
-                            <select class="form-control" name="status" required>
+                            <select class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="status" required>
                                 <option>processing</option>
                                 <option>shipping</option>
                                 <option>complete</option>
@@ -55,11 +55,11 @@
 
                         <div class="form-group">
                             <label for="description">Description* </label>
-                            <input class="form-control" type="text" name="description" value="{{$delivery->description}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$delivery->description}}" required>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

@@ -20,21 +20,21 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="form-control" type="text" name="name" value="{{$product->name}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$product->name}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Price* </label>
-                            <input class="form-control" type="number" name="price" value="{{$product->price}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="price" value="{{$product->price}}" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Description* </label>
-                            <input class="form-control" type="text" name="description" value="{{$product->description}}" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$product->description}}" required>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

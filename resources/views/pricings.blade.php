@@ -24,21 +24,21 @@
 
                         <div class="form-group">
                             <label for="name">Region* </label>
-                            <input class="form-control" type="text" name="region" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Ville* </label>
-                            <input class="form-control" type="text" name="city" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" required>
                         </div>
 
                         <div class="form-group">
                             <label for="name">Tarif* </label>
-                            <input class="form-control" type="text" name="price" required>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" required>
                         </div>
 
                         <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Enregistrer</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Enregistrer</button>
                         </div>
                     </form>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <table class="table table-striped">
+                            <table class="min-w-full divide-y divide-gray-200">
                                 <thead>
                                     <tr>
                                         <td>ID</td>
@@ -69,13 +69,13 @@
                                         <td>{{$pricing->created_at}}</td>
                                         <td>{{$pricing->updated_at}}</td>
                                         <td>
-                                            <a href="{{ route('pricings.edit', $pricing->id) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('pricings.edit', $pricing->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded">Edit</a>
                                         </td>
                                         <td>
                                             <form action="{{ route('pricings.destroy', $pricing->id)}}" method="POST">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold p-1 rounded" type="submit">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

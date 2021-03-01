@@ -7,26 +7,6 @@ use App\Models\Customers;
 
 class CustomersController extends Controller
 {
-    public function store(Request $request)
-    {
-            $this->validate($request, [
-                'name' => 'required',
-                'phone' => 'required',
-                'email' => 'required',
-                'address' => 'required'
-            ]);
-
-            $customer = new Customers([
-                'name' => $request->get('name'),
-                'phone' => $request->get('phone'),
-                'email' => $request->get('email'),
-                'address' => $request->get('address'),
-            ]);
-            $customer->save();
-            return redirect('/customers')->with('success', 'Delivery added!');
-        
-    }
-
     public function edit($id)
     {
         $customer = Customers::find($id);

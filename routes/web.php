@@ -10,6 +10,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 use App\Http\Livewire\Posts;
 use App\Http\Livewire\ShowPosts;
 
@@ -27,6 +29,7 @@ use App\Http\Livewire\ShowPosts;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/approval', [HomeController::class, 'approval'])->name('users.approval');
 Route::post('contact-us', [ HomeController::class, 'saveContact' ])->name('contact-us');
 
 Route::middleware(['auth:sanctum','verified'])->group(function () {
@@ -53,6 +56,8 @@ Route::resource('customers', CustomersController::class);
 Route::resource('stock', StockController::class);
 Route::resource('products', ProductsController::class);
 Route::resource('pricings', PricingController::class);
-
+Route::resource('roles', RoleController::class);
+Route::resource('users', UserController::class);
+Route::get('/users/{user_id}/approve', [UserController::class, 'approve'])->name('users.approve');
 });
 

@@ -9,9 +9,7 @@ class Deliveries extends Model
     protected $fillable = [
         'id',
         'sale_id',
-        'livreur_id',
-        'product_id',
-        'settings_id',
+        'tracking_number',
         'recipient',
         'address',
         'phone',
@@ -24,6 +22,6 @@ class Deliveries extends Model
 
     public function sale()
     {
-        return $this->belongsTo(Sales::class);
+        return $this->hasMany(Sales::class);
     }
 }

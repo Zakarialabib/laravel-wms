@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Deliveries;
 use App\Models\Sales;
+use App\Models\Products;
+use App\Models\User;
 
 class DeliveriesController extends Controller
 {
@@ -15,9 +17,10 @@ class DeliveriesController extends Controller
         if (Sales::where('id', '=', $request->get('sale_id'))->count() > 0) {
             $this->validate($request, [
                 'sale_id' => 'required|unique:deliveries',
-                'livreur' => 'required',
+                'tracking_number' => 'required',
                 'recipient' => 'required',
                 'address' => 'required',
+                'price' => 'required',
                 'expected_arrival' => 'required|date|after:tomorrow',
                 'actual_arrival' => 'nullable|date|after:expected_arrival',
                 'status' => 'required',
@@ -26,9 +29,10 @@ class DeliveriesController extends Controller
 
             $delivery = new Deliveries([
                 'sale_id' => $request->get('sale_id'),
-                'livreur' => $request->get('livreur'),
+                'tracking_number' => $request->get('tracking_number'),
                 'recipient' => $request->get('recipient'),
                 'address' => $request->get('address'),
+                'price' => $request->get('price'),
                 'expected_arrival' => $request->get('expected_arrival'),
                 'actual_arrival' => $request->get('actual_arrival'),
                 'status' => $request->get('status'),
@@ -51,9 +55,10 @@ class DeliveriesController extends Controller
     {
         $this->validate($request, [
             'sale_id' => 'required|unique:deliveries',
-            'livreur' => 'required',
+            'tracking_number' => 'required',
             'recipient' => 'required',
             'address' => 'required',
+            'price' => 'required',
             'expected_arrival' => 'required|date|after:tomorrow',
             'actual_arrival' => 'nullable|date|after:expected_arrival',
             'status' => 'required',
@@ -81,7 +86,11 @@ class DeliveriesController extends Controller
     public function index()
     {
         $deliveries = Deliveries::all();
-        return view('deliveries', compact('deliveries'));
+        $sales = Sales::all();
+        $products = Products::all();
+        $users = User::all();
+        
+        return view('deliveries', compact('deliveries','sales','products','users'));
     }
 
     public function orderTrack(){
