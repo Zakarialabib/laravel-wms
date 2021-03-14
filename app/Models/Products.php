@@ -10,13 +10,17 @@ class Products extends Model
         'id',
         'name',
         'price',
-        'description',
-        'image',
-        
+        'description',        
     ];
     
     public function sale()
     {
-        return $this->belongsTo(Sales::class);
+        return $this->belongsToMany(Sales::class);
     }
+
+    public function stocks()
+    {
+        return $this->belongsToMany(Products::class);
+    }
+
 }

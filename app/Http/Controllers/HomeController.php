@@ -9,11 +9,17 @@ use Mail;
 
 class HomeController extends Controller
 {
+   
 
     public function index()
     {
         $setting = Setting::all();
         return view('welcome', compact('setting'));
+    }
+
+    public function approval()
+    {
+        return view('users.approval');
     }
 
     public function getContact() { 

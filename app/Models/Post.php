@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
  
     protected $fillable = [
-        'title', 'slug', 'body', 'image', 'meta_description', 'meta_keyword' ,'image'
+        'title', 'body','slug', 'image', 'meta_description', 'meta_keyword' ,'image'
     ];
 
 
@@ -19,6 +19,5 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'id');
     }
-
 
 }

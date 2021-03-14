@@ -35,7 +35,7 @@ class Sale extends Component
         $users = User::all();
         $settings = Setting::all();
 
-        $this->sales = Sales::all();
+        $this->sales = Sales::paginate(5);
         return view('livewire.sale', compact('settings','users','products','deliveries'),[
             'sales' => $this->search === null ?
             Sales::paginate() :

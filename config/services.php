@@ -23,6 +23,11 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
+    
+    'facebook_poster' => [
+        'page_id' => env('FACEBOOK_PAGE_ID'),
+        'access_token' => env('FACEBOOK_ACCESS_TOKEN'),
+    ],
 
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),

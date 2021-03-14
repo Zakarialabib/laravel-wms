@@ -20,8 +20,19 @@ class Deliveries extends Model
         'description',
     ];
 
-    public function sale()
+    public function sales()
     {
-        return $this->hasMany(Sales::class);
+        return $this->belongsToMany(Sales::class);
     }
+
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+
 }

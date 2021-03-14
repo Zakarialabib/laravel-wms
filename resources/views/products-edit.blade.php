@@ -1,6 +1,6 @@
 <x-app-layout>
 <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
     Edit product
     </h2>
 </x-slot>
@@ -20,21 +20,21 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$product->name}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$product->name}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Price* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="price" value="{{$product->price}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="number" name="price" value="{{$product->price}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Description* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$product->description}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$product->description}}" >
                         </div>
 
                         <div class="form-group">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

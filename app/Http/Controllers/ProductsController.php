@@ -49,21 +49,10 @@ class ProductsController extends Controller
         return redirect('/products')->with('success', 'Product updated!');
     }
 
-    public function destroy($id)
-    {
-        $product = Products::find($id);
-        try {
-            $product->delete();
-        } catch(\Illuminate\Database\QueryException $ex){
-            return redirect('/products')->with('error', 'Cannot delete record due to use as foreign key!');
-        }
-
-        return redirect('/products')->with('success', 'Product deleted!');
-    }
 
     public function index()
     {
         $products = Products::all();
-        return view('products', compact('products'));
+        return view('products' , compact('products'));
     }
 }

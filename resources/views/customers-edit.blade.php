@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
     Edit Customer
     </h2>
 </x-slot>
@@ -21,27 +21,27 @@
 
                         <div class="form-group">
                             <label for="name">name* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$customer->name}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$customer->name}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="phone">phone* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="phone" value="{{$customer->phone}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="phone" value="{{$customer->phone}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="email">email* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" value="{{$customer->email}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" value="{{$customer->email}}" >
                         </div>
 
 
                         <div class="form-group">
                             <label for="address">address* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$customer->address}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$customer->address}}" >
                         </div>
 
                         <div class="form-group">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

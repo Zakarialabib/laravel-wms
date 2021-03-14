@@ -167,6 +167,7 @@ return [
          */
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        'Barryvdh\TranslationManager\ManagerServiceProvider',
         /*
          * Application Service Providers...
          */

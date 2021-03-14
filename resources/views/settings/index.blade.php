@@ -1,6 +1,6 @@
 <x-app-layout>
 <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
     Setting
     </h2>
 </x-slot>

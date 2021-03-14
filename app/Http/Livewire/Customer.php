@@ -11,7 +11,7 @@ class Customer extends Component
 {
     use WithPagination;
 
-    public $customerId, $name ,$email, $phone ,$address, $status;
+    public $name ,$email, $phone ,$address, $status;
     public $search;
     protected $updatesQueryString = ['search'];
 
@@ -24,12 +24,12 @@ class Customer extends Component
     public function render()
     {
      ///   $this->customers = Customers::query()
-        /// ->where('user_id', Auth::id());
+     ///  ->where('user_id', Auth::id());
 
-        $this->customers = Customers::all();
+        $this->customers = Customers::paginate(5);
         return view('livewire.customer',[
             'customers' => $this->search === null ?
-            Customers::paginate() :
+            Customers::paginate(5) :
             Customers::where('name', 'like', '%' . $this->search . '%')
                 ->orWhere('email', 'like', '%' . $this->search . '%')
                 ->orderBy('created_at', 'desc')
@@ -43,10 +43,10 @@ class Customer extends Component
             'email' => 'required|email',
             'phone' => 'required',
             'address' => 'required',
+            'status' => 'required',
         ]);
         Customers::create($validatedDate);
-        return back()->with('message', 'Customers Created Successfully.');
-       
+        return back()->with('message', 'Customer Created Successfully.');
     }
 
     public function edit($id)

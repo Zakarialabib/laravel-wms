@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
     Edit sale
     </h2>
 </x-slot>
@@ -21,7 +21,7 @@
 
                         <div class="form-group">
                             <label for="product_id">Product ID* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="product_id" value="{{$sale->product_id}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="number" name="product_id" value="{{$sale->product_id}}" >
                         </div>
 
                         <div class="form-group">
@@ -45,12 +45,12 @@
 
                         <div class="form-group">
                             <label for="quantity">Quantity* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="quantity" value="{{$sale->quantity}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="quantity" value="{{$sale->quantity}}" >
                         </div>
                         
 
                         <div class="form-group">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

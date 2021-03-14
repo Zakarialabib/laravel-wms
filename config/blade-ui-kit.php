@@ -19,18 +19,18 @@ return [
         'alert' => Components\Alerts\Alert::class,
         'carbon' => Components\DateTime\Carbon::class,
         'checkbox' => Components\Forms\Inputs\Checkbox::class,
-        'color-picker' => Components\Forms\Inputs\ColorPicker::class,
+      //  'color-picker' => Components\Forms\Inputs\ColorPicker::class,
         'countdown' => Components\DateTime\Countdown::class,
         'dropdown' => Components\Navigation\Dropdown::class,
-        'easy-mde' => Components\Editors\EasyMDE::class,
+      //  'easy-mde' => Components\Editors\EasyMDE::class,
         'logout' => Components\Buttons\Logout::class,
-        'mapbox' => Components\Maps\Mapbox::class,
+   ///     'mapbox' => Components\Maps\Mapbox::class,
         'markdown' => Components\Markdown\Markdown::class,
         'password' => Components\Forms\Inputs\Password::class,
         'social-meta' => Components\Layouts\SocialMeta::class,
         'textarea' => Components\Forms\Inputs\Textarea::class,
         'toc' => Components\Markdown\ToC::class,
-        'trix' => Components\Editors\Trix::class,
+   ///     'trix' => Components\Editors\Trix::class,
 
     ],
 
@@ -80,7 +80,7 @@ return [
 
         'alpine' => 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js',
 
-        'easy-mde' => [
+     /*   'easy-mde' => [
             'https://unpkg.com/easymde/dist/easymde.min.css',
             'https://unpkg.com/easymde/dist/easymde.min.js',
         ],
@@ -89,17 +89,17 @@ return [
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
             'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js',
         ],
-
+*/
         'moment' => [
             'https://cdn.jsdelivr.net/npm/moment@2.26.0/moment.min.js',
             'https://cdn.jsdelivr.net/npm/moment-timezone@0.5.31/builds/moment-timezone-with-data.min.js',
         ],
 
-        'trix' => [
+  /*      'trix' => [
             'https://unpkg.com/trix@1.2.3/dist/trix.css',
             'https://unpkg.com/trix@1.2.3/dist/trix.js',
         ],
-
+*/
     ],
 
 ];

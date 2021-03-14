@@ -1,6 +1,6 @@
 <x-app-layout>
 <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
     Modification du Tarif
     </h2>
 </x-slot>
@@ -20,21 +20,21 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" value="{{$pricing->region}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" value="{{$pricing->region}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Ville* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" value="{{$pricing->city}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" value="{{$pricing->city}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Tarif* </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" value="{{$pricing->price}}" required>
+                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" value="{{$pricing->price}}" >
                         </div>
 
                         <div class="form-group">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-3 rounded" type="submit">Enregistrer</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">Enregistrer</button>
                         </div>
                     </form>
                 </div>

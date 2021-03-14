@@ -12,8 +12,15 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Livewire\Stock;
 use App\Http\Livewire\Posts;
+use App\Http\Livewire\Pricings;
+use App\Http\Livewire\Customer;
 use App\Http\Livewire\ShowPosts;
+use App\Http\Livewire\Product;
+use App\Http\Livewire\Delivery;
+use App\Http\Livewire\Sale;
+
 
 
 /*
@@ -32,10 +39,10 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/approval', [HomeController::class, 'approval'])->name('users.approval');
 Route::post('contact-us', [ HomeController::class, 'saveContact' ])->name('contact-us');
 
-Route::middleware(['auth:sanctum','verified'])->group(function () {
+Route::middleware(['auth:sanctum', 'approved','verified'])->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/sales', [SalesController::class,'index'])->name('sales');
-Route::get('/deliveries', [DeliveriesController::class, 'index'])->name('deliveries');
+Route::get('/deliverie', [DeliveriesController::class, 'index'])->name('deliveries');
 Route::get('/customers', [CustomersController::class, 'index'])->name('customers');
 Route::get('/stock', [StockController::class, 'index'])->name('stock');
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
@@ -51,11 +58,17 @@ Route::get('post/{id}', ShowPosts::class)->name('posts-show');
 Route::get('post', Posts::class)->name('post');
 
 Route::resource('sales', SalesController::class);
+Route::resource('sale', Sale::class);
 Route::resource('deliveries', DeliveriesController::class);
+Route::resource('deliveries', Delivery::class);
+Route::resource('customer', Customer::class);
 Route::resource('customers', CustomersController::class);
 Route::resource('stock', StockController::class);
+Route::resource('stocks', Stock::class);
 Route::resource('products', ProductsController::class);
+Route::resource('product', Product::class);
 Route::resource('pricings', PricingController::class);
+Route::resource('pricing', Pricings::class);
 Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);
 Route::get('/users/{user_id}/approve', [UserController::class, 'approve'])->name('users.approve');

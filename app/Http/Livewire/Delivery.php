@@ -15,7 +15,7 @@ class Delivery extends Component
 {
     use WithPagination;
 
-    public $deliveryId, $sale_id , $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status,$description,$price;
+    public $delivery_id, $sale_id , $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price;
     public $search;
     protected $updatesQueryString = ['search'];
 
@@ -28,17 +28,17 @@ class Delivery extends Component
     public function render()
     {
      ///   $this->sales = Deliveries::query()
-        /// ->where('user_id', Auth::id());
+     /// ->where('user_id', Auth::id());
+        
+        $this->deliveries = Deliveries::paginate(5);
 
-        $deliveries = Deliveries::all();
         $products = Products::all();
         $users = User::all();
         $sales = Sales::all();
 
-        $this->sales = Deliveries::all();
-        return view('livewire.delivery', compact('sales','users','products','deliveries'),[
-            'sales' => $this->search === null ?
-            Deliveries::paginate() :
+        return view('livewire.delivery', compact('sales','users','products'),[
+            'deliveries' => $this->search === null ?
+            Deliveries::paginate(5) :
             Deliveries::where('status', 'like', '%' . $this->search . '%')
                 ->orderBy('created_at', 'desc')
         ]);
@@ -47,7 +47,7 @@ class Delivery extends Component
     public function store()
     {
         if (Sales::where('id')) {
-            $validatedDate = $this->validate([
+        $this->validate([
             'sale_id' => 'required|unique:deliveries',
             'tracking_number' => 'required',
             'recipient' => 'required',
@@ -58,10 +58,21 @@ class Delivery extends Component
             'status' => 'required',
             'description' => 'required'
         ]);
-        Deliveries::create($validatedDate);
-        return back()->with('message', 'Deliveries Created Successfully.');
-    } else {
-        return  back()->with('error', 'Sale ID doesn\'t exist!');
-    }
+        Deliveries::updateOrCreate(['id' => $this->delivery_id], [
+            'sale_id' => $this->sale_id,
+            'tracking_number' => $this->tracking_number,
+            'recipient' => $this->recipient,
+            'address' => $this->address,
+            'price' => $this->price,
+            'expected_arrival' =>$this->expected_arrival,
+            'actual_arrival' => $this->actual_arrival,
+            'status' => $this->status,
+            'description' => $this->description, 
+        ]);
+        return  session()->flash('message', 
+            $this->delivery_id ? 'Deliveries Created Successfully' : 'Product Created Successfully.');
+        } else {
+            return  back()->with('error', 'Deliveries ID doesn\'t exist!');
+        }
   }
 }

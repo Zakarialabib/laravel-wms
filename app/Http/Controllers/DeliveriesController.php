@@ -11,39 +11,6 @@ use App\Models\User;
 class DeliveriesController extends Controller
 {
 
-    public function store(Request $request)
-    {
-
-        if (Sales::where('id', '=', $request->get('sale_id'))->count() > 0) {
-            $this->validate($request, [
-                'sale_id' => 'required|unique:deliveries',
-                'tracking_number' => 'required',
-                'recipient' => 'required',
-                'address' => 'required',
-                'price' => 'required',
-                'expected_arrival' => 'required|date|after:tomorrow',
-                'actual_arrival' => 'nullable|date|after:expected_arrival',
-                'status' => 'required',
-                'description' => 'required'
-            ]);
-
-            $delivery = new Deliveries([
-                'sale_id' => $request->get('sale_id'),
-                'tracking_number' => $request->get('tracking_number'),
-                'recipient' => $request->get('recipient'),
-                'address' => $request->get('address'),
-                'price' => $request->get('price'),
-                'expected_arrival' => $request->get('expected_arrival'),
-                'actual_arrival' => $request->get('actual_arrival'),
-                'status' => $request->get('status'),
-                'description' => $request->get('description'),
-            ]);
-            $delivery->save();
-            return redirect('/deliveries')->with('success', 'Delivery added!');
-        } else {
-            return redirect('/deliveries')->with('error', 'Sale ID doesn\'t exist!');
-        }
-    }
 
     public function edit($id)
     {

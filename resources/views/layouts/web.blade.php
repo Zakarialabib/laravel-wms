@@ -16,7 +16,6 @@
 }
 </style>
         @livewireStyles
-
         <!-- Scripts -->
         <script src="{{ asset('/public/js/app.js') }}" defer></script>
     </head>
@@ -28,8 +27,6 @@
             @yield('content')
             </main>
 
-       
-        
         <script>
 		//Javascript to toggle the menu
 		document.getElementById('nav-toggle').onclick = function(){

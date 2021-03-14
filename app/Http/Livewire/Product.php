@@ -11,7 +11,7 @@ class Product extends Component
 {
     use WithPagination;
 
-    public $productId, $name ,$price, $description;
+    public $product_id, $name ,$price, $description;
     public $search;
     protected $updatesQueryString = ['search'];
 
@@ -26,10 +26,10 @@ class Product extends Component
      ///   $this->products = Products::query()
         /// ->where('user_id', Auth::id());
 
-        $this->products = Products::all();
+        $this->products = Products::paginate(5);
         return view('livewire.product',[
             'products' => $this->search === null ?
-            Products::paginate() :
+            Products::paginate(5) :
             Products::where('name', 'like', '%' . $this->search . '%')
                 ->orderBy('created_at', 'desc')
         ]);
@@ -37,13 +37,31 @@ class Product extends Component
 
     public function store()
     {
-        $validatedDate = $this->validate([
+        $this->validate([
             'name' => 'required',
-            'price' => 'required',
+            'price' => 'required|integer|min:0',
             'description' => 'required',
         ]);
-        Products::create($validatedDate);
-        return back()->with('message', 'Products Created Successfully.');
-       
+        Products::updateOrCreate(['id' => $this->product_id], [
+            'name' => $this->name,
+            'price' => $this->price,
+            'description' => $this->description, 
+        ]);
+        session()->flash('message', 
+            $this->product_id ? 'Product Updated Successfully.' : 'Product Created Successfully.');
+
+    }
+
+      /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public function delete($id)
+
+    {
+        Products::find($id)->delete();
+        session()->flash('message', 'Post Deleted Successfully.');
+
     }
 }
