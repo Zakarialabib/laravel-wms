@@ -30,3 +30,16 @@ php artisan migrate
 </p>
     
 
+<h3>Contributing</h3>
+
+<p>Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the Laravel documentation.
+</p>
+<h3>Code of Conduct</h3>
+<p>In order to ensure that the Laravel community is welcoming to all, please review and abide by the Code of Conduct.</p>
+
+<h3>Security Vulnerabilities</h3>
+<p>If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via taylor@laravel.com. All security vulnerabilities will be promptly addressed.</p>
+
+<h3>License</h3>
+
+<p>The Laravel framework is open-sourced software licensed under the MIT license.</p>
