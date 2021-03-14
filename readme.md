@@ -42,4 +42,4 @@ php artisan migrate
 
 <h3>License</h3>
 
-<p>The Laravel framework is open-sourced software licensed under the MIT license.</p>
+<p>The Laravel framework is open-sourced software licensed under the Apache License 2.0.</p>
