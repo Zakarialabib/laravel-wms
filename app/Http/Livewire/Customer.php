@@ -11,7 +11,7 @@ class Customer extends Component
 {
     use WithPagination;
 
-    public $name ,$email, $phone ,$address, $status;
+    public $name ,$email, $phone ,$address, $status, $deleteId;
     public $search;
     protected $updatesQueryString = ['search'];
 
@@ -32,7 +32,7 @@ class Customer extends Component
             Customers::paginate(5) :
             Customers::where('name', 'like', '%' . $this->search . '%')
                 ->orWhere('email', 'like', '%' . $this->search . '%')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('created_at', 'desc')->paginate(5)
         ]);
     }
 
@@ -62,15 +62,32 @@ class Customer extends Component
         return back()->with('message', 'Customers Updated Successfully.');
     }
 
-    /**
+
+      /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @return response()
      */
-    public function delete($id)
+    public function deleteId($id)
+
     {
-        Customers::find($id)->delete();
-        return back()->with('message', 'Intervention Deleted Successfully.');
+        $this->deleteId = $id;
+        session()->flash('message', 'Post Deleted Successfully.');
+
     }
+    
+      /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function delete()
+
+    {
+        Customers::find($this->deleteId)->delete();
+        session()->flash('message', 'Post Deleted Successfully.');
+
+    }
+  
 
 }

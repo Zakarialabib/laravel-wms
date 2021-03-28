@@ -21,7 +21,7 @@ class CreateLivreursTable extends Migration
             $table->text('zone');
             $table->text('pricing');
             $table->foreign('deliveries_id')->references('id')->on('deliveries_id');
-            $table->integer('deliveries_id')->unsigned();;
+            $table->integer('deliveries_id')->unsigned();
             $table->timestamps();
         });
     }

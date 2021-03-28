@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="site_name">Site Name</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter site name"
                     id="site_name"
@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="control-label" for="site_title">Site Title</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter site title"
                     id="site_title"
@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="control-label" for="default_email_address">Default Email Address</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="email"
                     placeholder="Enter store default email address"
                     id="default_email_address"
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label class="control-label" for="currency_code">Currency Code</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter store currency code"
                     id="currency_code"
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="control-label" for="currency_symbol">Currency Symbol</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter store currency symbol"
                     id="currency_symbol"
@@ -63,7 +63,7 @@
         <div class="tile-footer">
             <div class="row d-print-none mt-2">
                 <div class="col-12 text-right">
-                    <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
                 </div>
             </div>
         </div>

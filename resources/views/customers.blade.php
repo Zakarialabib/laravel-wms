@@ -4,11 +4,13 @@
             {{ __('Customer Dashbord') }}
         </h2>
     </x-slot>
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
-<livewire:customer />
-</div>
-</div>
+<div>
+  <div class="py-12">
+        <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+          <livewire:customer />
+        </div>
+     </div>
+  </div>
 </div>
 </x-app-layout>

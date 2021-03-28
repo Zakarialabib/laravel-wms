@@ -21,27 +21,27 @@
 
                         <div class="form-group">
                             <label for="sale_id">Sale ID* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="number" name="sale_id" value="{{$delivery->sale_id}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="number" name="sale_id" value="{{$delivery->sale_id}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Recipient* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="recipient" value="{{$delivery->recipient}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="recipient" value="{{$delivery->recipient}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$delivery->address}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="address" value="{{$delivery->address}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="expected_arrival">Expected Arrival* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="date" name="expected_arrival" value="{{$delivery->expected_arrival}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="date" name="expected_arrival" value="{{$delivery->expected_arrival}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="actual_arrival">Actual Arrival </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="date" name="actual_arrival" value="{{$delivery->actual_arrival}}">
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="date" name="actual_arrival" value="{{$delivery->actual_arrival}}">
                         </div>
 
                         <div class="form-group">
@@ -56,7 +56,7 @@
 
                         <div class="form-group">
                             <label for="description">Description* </label>
-                            <textarea class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$delivery->description}}" ></textarea>
+                            <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="description" value="{{$delivery->description}}" ></textarea>
                         </div>
 
                         <div class="form-group">

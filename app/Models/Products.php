@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
 {
+    
     protected $fillable = [
         'id',
         'name',
@@ -21,6 +22,11 @@ class Products extends Model
     public function stocks()
     {
         return $this->belongsToMany(Products::class);
+    }
+
+    public function vendors()
+    {
+        return $this->belongsTo(Vendors::class);
     }
 
 }

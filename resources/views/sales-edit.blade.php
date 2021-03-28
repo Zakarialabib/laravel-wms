@@ -21,7 +21,7 @@
 
                         <div class="form-group">
                             <label for="product_id">Product ID* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="number" name="product_id" value="{{$sale->product_id}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="number" name="product_id" value="{{$sale->product_id}}" >
                         </div>
 
                         <div class="form-group">
@@ -45,7 +45,7 @@
 
                         <div class="form-group">
                             <label for="quantity">Quantity* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="quantity" value="{{$sale->quantity}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="quantity" value="{{$sale->quantity}}" >
                         </div>
                         
 

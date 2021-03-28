@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="google_analytics">Google Analytics Code</label>
                 <textarea
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     rows="4"
                     placeholder="Enter google analytics code"
                     id="google_analytics"
@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="control-label" for="facebook_pixels">Facebook Pixel Code</label>
                 <textarea
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     rows="4"
                     placeholder="Enter facebook pixel code"
                     id="facebook_pixels"
@@ -28,7 +28,7 @@
         <div class="tile-footer">
             <div class="row d-print-none mt-2">
                 <div class="col-12 text-right">
-                    <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
                 </div>
             </div>
         </div>

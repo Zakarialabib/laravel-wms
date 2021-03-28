@@ -20,17 +20,17 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$product->name}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="name" value="{{$product->name}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Price* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="number" name="price" value="{{$product->price}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="number" name="price" value="{{$product->price}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Description* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="description" value="{{$product->description}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="description" value="{{$product->description}}" >
                         </div>
 
                         <div class="form-group">

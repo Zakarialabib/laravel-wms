@@ -6,7 +6,7 @@
 </x-slot>
 
 <div class="py-10">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
        <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">     
 
 
@@ -36,13 +36,13 @@
 <div class="col-span-3 sm:col-span-3">
             <strong>Nom:</strong>
 
-            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
     </div>
    
     <div class="col-span-3 sm:col-span-3">
             <strong>Email:</strong>
 
-            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
 
     </div>
 
@@ -50,7 +50,7 @@
 
             <strong>Téléphone:</strong>
 
-            {!! Form::text('phone', null, array('placeholder' => 'Phone','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::text('phone', null, array('placeholder' => 'Phone','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
 
     </div>
 
@@ -58,7 +58,7 @@
 
             <strong>Adresse:</strong>
 
-            {!! Form::text('address', null, array('placeholder' => 'Address','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::text('address', null, array('placeholder' => 'Address','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
 
     </div>
 
@@ -67,13 +67,13 @@
 
             <strong>Mot de passe:</strong>
 
-            {!! Form::password('password', array('placeholder' => 'Password','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::password('password', array('placeholder' => 'Password','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
     </div>
 
     <div class="col-span-6 sm:col-span-3">
             <strong>Confirmation du Mot de passe:</strong>
 
-            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
 
     </div>
 

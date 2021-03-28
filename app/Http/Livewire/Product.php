@@ -11,7 +11,7 @@ class Product extends Component
 {
     use WithPagination;
 
-    public $product_id, $name ,$price, $description;
+    public $product_id, $name ,$price, $description, $deleteId;
     public $search;
     protected $updatesQueryString = ['search'];
 
@@ -31,7 +31,8 @@ class Product extends Component
             'products' => $this->search === null ?
             Products::paginate(5) :
             Products::where('name', 'like', '%' . $this->search . '%')
-                ->orderBy('created_at', 'desc')
+                ->orWhere('description', 'like', '%' . $this->search . '%')
+                ->orderBy('created_at', 'desc')->paginate(5)
         ]);
     }
 
@@ -52,15 +53,33 @@ class Product extends Component
 
     }
 
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function deleteId($id)
+
+    {
+        $this->deleteId = $id;
+        session()->flash('message', 'Post Deleted Successfully.');
+
+    }
+
+
+
+
+    
       /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @return response()
      */
-    public function delete($id)
+    public function delete()
 
     {
-        Products::find($id)->delete();
+        Products::find($this->deleteId)->delete();
         session()->flash('message', 'Post Deleted Successfully.');
 
     }

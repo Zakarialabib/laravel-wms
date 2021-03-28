@@ -10,32 +10,32 @@
         <div class="">
               <div class="mb-4">
                   <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
-                  <input type="text" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="title" placeholder="Enter Title" wire:model="title">
+                  <input type="text" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="title" placeholder="Enter Title" wire:model="title">
                   @error('title') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
                   <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Body:</label>
-                  <textarea class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="body" wire:model="body" placeholder="Enter Body"></textarea>
+                  <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="body" wire:model="body" placeholder="Enter Body"></textarea>
                   @error('body') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
                   <label for="slug" class="block text-gray-700 text-sm font-bold mb-2">slug:</label>
-                  <input type="text" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="slug" placeholder="Enter slug" wire:model="slug">
+                  <input type="text" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="slug" placeholder="Enter slug" wire:model="slug">
                   @error('slug') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
                   <label for="image" class="block text-gray-700 text-sm font-bold mb-2">image:</label>
-                  <input type="file" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="image"  wire:model="image">
+                  <input type="file" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="image"  wire:model="image">
                   @error('image') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
                   <label for="meta_keyword" class="block text-gray-700 text-sm font-bold mb-2">Seo keyword:</label>
-                  <input type="text" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="meta_keyword" placeholder="Enter Seo keyword" wire:model="meta_keyword">
+                  <input type="text" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="meta_keyword" placeholder="Enter Seo keyword" wire:model="meta_keyword">
                   @error('meta_keyword') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
               <div class="mb-4">
                   <label for="meta_description" class="block text-gray-700 text-sm font-bold mb-2">Seo description:</label>
-                  <textarea class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" id="meta_description" wire:model="meta_description" placeholder="Enter Seo description"></textarea>
+                  <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" id="meta_description" wire:model="meta_description" placeholder="Enter Seo description"></textarea>
                   @error('meta_description') <span class="text-red-500">{{ $message }}</span>@enderror
               </div>
         </div>

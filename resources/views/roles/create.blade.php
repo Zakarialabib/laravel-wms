@@ -8,7 +8,7 @@
 
 
 <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
 
 
@@ -43,7 +43,7 @@
 
             <strong>Nom</strong>
 
-            {!! Form::text('name', null, array('placeholder' => 'Nom','class' => 'shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline')) !!}
+            {!! Form::text('name', null, array('placeholder' => 'Nom','class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full')) !!}
 
         </div>
 

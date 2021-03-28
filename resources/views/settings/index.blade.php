@@ -6,8 +6,9 @@
 </x-slot>
 
     @include('partials.flash')
-    <div class="container">
-        <div class="row">
+    <div class="py-12">
+        <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
+                    <div class="row">
         <div class="col-md-6">
                     @include('settings.includes.general')
                 </div>
@@ -28,5 +29,7 @@
                 </div>
             </div>
         </div>
+    </div>
+
     </div>
     </x-app-layout>

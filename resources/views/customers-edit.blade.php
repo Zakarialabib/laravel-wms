@@ -21,23 +21,23 @@
 
                         <div class="form-group">
                             <label for="name">name* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" value="{{$customer->name}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="name" value="{{$customer->name}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="phone">phone* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="phone" value="{{$customer->phone}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="phone" value="{{$customer->phone}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="email">email* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="email" value="{{$customer->email}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="email" value="{{$customer->email}}" >
                         </div>
 
 
                         <div class="form-group">
                             <label for="address">address* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="address" value="{{$customer->address}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="address" value="{{$customer->address}}" >
                         </div>
 
                         <div class="form-group">

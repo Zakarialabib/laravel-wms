@@ -40,7 +40,7 @@ class Delivery extends Component
             'deliveries' => $this->search === null ?
             Deliveries::paginate(5) :
             Deliveries::where('status', 'like', '%' . $this->search . '%')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('created_at', 'desc')->paginate(5)
         ]);
     }
 

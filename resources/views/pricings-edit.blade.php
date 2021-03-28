@@ -20,17 +20,17 @@
 
                         <div class="form-group">
                             <label for="name">Name* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" value="{{$pricing->region}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="region" value="{{$pricing->region}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Ville* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" value="{{$pricing->city}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="city" value="{{$pricing->city}}" >
                         </div>
 
                         <div class="form-group">
                             <label for="name">Tarif* </label>
-                            <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" value="{{$pricing->price}}" >
+                            <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="price" value="{{$pricing->price}}" >
                         </div>
 
                         <div class="form-group">

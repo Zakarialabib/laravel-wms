@@ -38,9 +38,9 @@ class Sale extends Component
         $this->sales = Sales::paginate(5);
         return view('livewire.sale', compact('settings','users','products','deliveries'),[
             'sales' => $this->search === null ?
-            Sales::paginate() :
+            Sales::paginate(5) :
             Sales::where('status', 'like', '%' . $this->search . '%')
-                ->orderBy('created_at', 'desc')
+                ->orderBy('created_at', 'desc')->paginate(5)
         ]);
     }
 

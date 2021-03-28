@@ -12,24 +12,26 @@
         @endif
         <h3 class="panel-heading">Create Pricing</h3>
 
-        <form wire:submit.prevent="store">
-            <div class="form-group">
+    <form wire:submit.prevent="store">
+        <div class="flex flex-wrap -m-2">
+            <div class="w-1/2 p-2">
                 <label for="region">Region* </label>
-                <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="region" :value="old('region')" wire:model="region" >
+                <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="region" :value="old('region')" wire:model="region" >
                 @error('region') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
 
-            <div class="form-group">
+            <div class="w-1/2 p-2">
                 <label for="city">Ville* </label>
-                <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="city" :value="old('city')"  wire:model="city" >
+                <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="city" :value="old('city')"  wire:model="city" >
                 @error('city') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
 
-            <div class="form-group">
-                <label for="Tarif">Tarif* </label>
-                <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="text" name="price" :value="old('price')"  wire:model="price" >
+            <div class="w-1/2 p-2">
+                <label for="price">Tarif* </label>
+                <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="price" :value="old('price')"  wire:model="price" >
                 @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
+          </div>
 
             <div class="form-group">
                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" >Enregistrer</button>
@@ -37,13 +39,15 @@
         </form>
     </div>
 </div>
-<input type="text" wire:model="search"  class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline" placeholder="Recherche Region ou Ville" />
+<input type="text" wire:model="search"
+class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline"
+placeholder="Recherche par Nom Client" />
 <div>
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="min-w-full divide-y divide-gray-200">
+                    <table class="table-auto w-full divide-y divide-gray-200">
                         <thead>
                             <tr>
                                 <td>ID</td>
@@ -66,7 +70,9 @@
                                 <td>{{$p->updated_at}}</td>
                                 <td>
                                     <button wire:click="edit({{ $p->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Modifier</button>
-                                    <button wire:click="delete({{ $p->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Supprimer</button>
+                                    <button type="button" wire:click="deleteId({{ $p->id }})" class="btn btn-danger"
+                                        data-toggle="modal" data-target="#exampleModal">Delete</button>
+            
                                 </td>
                             </tr>
                             @endforeach
@@ -77,4 +83,48 @@
                     </div>
                 </div>
             </div>
+          
         </div>
+
+
+            <!-- Modal -->
+
+    <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Delete Confirm</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                    <span aria-hidden="true close-btn">×</span>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p>Are you sure want to delete?</p>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+
+                <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
+                    data-dismiss="modal">Yes, Delete</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

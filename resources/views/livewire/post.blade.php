@@ -4,7 +4,7 @@
     </h2>
 </x-slot>
 <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
             @if (session()->has('message'))
                 <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
@@ -20,7 +20,7 @@
                 @include('post.create')
             @endif
       
-            <table class="min-w-full divide-y divide-gray-200">
+            <table class="table-auto w-full divide-y divide-gray-200">
                 <thead>
                     <tr class="bg-gray-100">
                         <th class="px-4 py-2 w-20">No.</th>

@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->decimal('price', 10,0);
             $table->text('description');
+            $table->foreignId('vendor_id');
+            $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
             $table->timestamps();
         });
     }

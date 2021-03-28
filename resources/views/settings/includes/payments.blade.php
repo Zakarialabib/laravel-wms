@@ -6,7 +6,7 @@
         <div class="tile-body">
             <div class="form-group">
                 <label class="control-label" for="stripe_payment_method">Stripe Payment Method</label>
-                <select name="stripe_payment_method" id="stripe_payment_method" class="form-control">
+                <select name="stripe_payment_method" id="stripe_payment_method" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" >
                     <option value="1" {{ (config('settings.stripe_payment_method')) == 1 ? 'selected' : '' }}>Enabled</option>
                     <option value="0" {{ (config('settings.stripe_payment_method')) == 0 ? 'selected' : '' }}>Disabled</option>
                 </select>
@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label class="control-label" for="stripe_key">Key</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter stripe key"
                     id="stripe_key"
@@ -25,7 +25,7 @@
             <div class="form-group pb-2">
                 <label class="control-label" for="stripe_secret_key">Secret Key</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter stripe secret key"
                     id="stripe_secret_key"
@@ -36,7 +36,7 @@
             <hr>
             <div class="form-group pt-2">
                 <label class="control-label" for="paypal_payment_method">PayPal Payment Method</label>
-                <select name="paypal_payment_method" id="paypal_payment_method" class="form-control">
+                <select name="paypal_payment_method" id="paypal_payment_method" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" >
                     <option value="1" {{ (config('settings.paypal_payment_method')) == 1 ? 'selected' : '' }}>Enabled</option>
                     <option value="0" {{ (config('settings.paypal_payment_method')) == 0 ? 'selected' : '' }}>Disabled</option>
                 </select>
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label class="control-label" for="paypal_client_id">Client ID</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter paypal client Id"
                     id="paypal_client_id"
@@ -55,7 +55,7 @@
             <div class="form-group">
                 <label class="control-label" for="paypal_secret_id">Secret ID</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter paypal secret id"
                     id="paypal_secret_id"
@@ -67,7 +67,7 @@
         <div class="tile-footer">
             <div class="row d-print-none mt-2">
                 <div class="col-12 text-right">
-                    <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
                 </div>
             </div>
         </div>

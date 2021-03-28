@@ -6,7 +6,7 @@
 </x-slot>
 
 <div class="py-12">
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
             <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3" href="{{ route('users.create') }}"> Nouveau utilisateur </a>
 @if (session()->has('success'))
@@ -20,7 +20,7 @@
 @endif
 
 
-<table class="min-w-full my-3 divide-y divide-gray-200">
+<table class="table-auto w-full my-3 divide-y divide-gray-200">
 
  <tr class="bg-gray-100">
 
@@ -48,8 +48,8 @@
 @endif
 </td>
     <td>
-  <a href="{{ route('users.approve', $user->id) }}"   class="bg-orange-500 hover:bg-orange-700 p-2 text-white font-bold rounded">Approver</a>
-       <a class="bg-green-500 hover:bg-green-700 text-white font-bold p-2  rounded" href="{{ route('users.show',$user->id) }}">Voir</a>
+  <a href="{{ route('users.approve', $user->id) }}"  class="bg-indigo-500 hover:bg-indigo-700 p-2 text-white font-bold rounded">Approver</a>
+       <a class="bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded" href="{{ route('users.show',$user->id) }}">Voir</a>
        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded" href="{{ route('users.edit',$user->id) }}">Modifier</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Supprimer', ['class' => 'bg-red-500 hover:bg-red-700 text-white font-bold p-2 rounded']) !!}

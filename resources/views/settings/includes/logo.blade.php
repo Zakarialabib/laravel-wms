@@ -15,7 +15,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Logo</label>
-                        <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
+                        <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Favicon</label>
-                        <input class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
+                        <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
         <div class="tile-footer">
             <div class="row d-print-none mt-2">
                 <div class="col-12 text-right">
-                    <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
                 </div>
             </div>
         </div>

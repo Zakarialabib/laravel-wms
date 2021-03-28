@@ -10,9 +10,8 @@ class Pricings extends Component
 {
     use WithPagination;
 
-    public $pricing, $city, $region, $price;
+    public $pricing_id, $city, $region, $price , $deleteId;
     public $search;
-    protected $pricings;
     protected $updatesQueryString = ['search'];
 
     public function mount(): void
@@ -28,57 +27,17 @@ class Pricings extends Component
     public function render()
 
     {
-        $this->pricings = Pricing::paginate(5);
+        $this->pricings = Pricing::paginate(10);
 
         return view('livewire.pricings', [
             'pricings' => $this->search === null ?
-            Pricing::paginate(5) :
+            Pricing::paginate(10) :
             Pricing::where('region', 'like', '%' . $this->search . '%')
                 ->orWhere('city', 'like', '%' . $this->search . '%')
-                ->orderBy('created_at', 'desc')->paginate(5)
+                ->orderBy('created_at', 'desc')->paginate(10)
         ]);    }
 
-  /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function create()
 
-    {
-        $this->resetInputFields();
-        $this->openModal();
-    }
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function openModal()
-    {
-        $this->isOpen = true;
-    }
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-
-    public function closeModal()
-    {
-        $this->isOpen = false;
-    }
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    private function resetInputFields(){
-        $this->city = '';
-        $this->region = '';
-        $this->price = '';
-    }
     /**
      * The attributes that are mass assignable.
      *
@@ -92,9 +51,9 @@ class Pricings extends Component
             'price'=>'required', 
         ]);
         Pricing::updateOrCreate(['id' => $this->pricing_id], [
-            'city' => $this->title,
-            'region' => $this->body,
-            'price' => $this->slug, 
+            'city' => $this->city,
+            'region' => $this->region,
+            'price' => $this->price, 
         ]);
         session()->flash('message', 
             $this->pricing_id ? 'Pricing Updated Successfully.' : 'Pricing Created Successfully.');
@@ -114,15 +73,29 @@ class Pricings extends Component
         $this->price = $pricings->price;
         $this->openModal();
     }
+
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @return response()
      */
-    public function delete($id)
+    public function deleteId($id)
 
     {
-        Pricing::find($id)->delete();
+        $this->deleteId = $id;
+        session()->flash('message', 'Pricing Deleted Successfully.');
+
+    }
+
+         /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function delete()
+
+    {
+        Pricing::find($this->deleteId)->delete();
         session()->flash('message', 'Pricing Deleted Successfully.');
 
     }

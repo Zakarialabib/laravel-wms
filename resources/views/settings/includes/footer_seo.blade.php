@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="footer_copyright_text">Footer Copyright Text</label>
                 <textarea
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     rows="4"
                     placeholder="Enter footer copyright text"
                     id="footer_copyright_text"
@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="control-label" for="seo_meta_title">SEO Meta Title</label>
                 <input
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     type="text"
                     placeholder="Enter seo meta title for store"
                     id="seo_meta_title"
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label class="control-label" for="seo_meta_description">SEO Meta Description</label>
                 <textarea
-                    class="form-control"
+                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
                     rows="4"
                     placeholder="Enter seo meta description for store"
                     id="seo_meta_description"
@@ -39,7 +39,7 @@
         <div class="tile-footer">
             <div class="row d-print-none mt-2">
                 <div class="col-12 text-right">
-                    <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Settings</button>
                 </div>
             </div>
         </div>

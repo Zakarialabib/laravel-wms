@@ -170,6 +170,7 @@
 
     <!-- Role Management Modal -->
     <x-jet-dialog-modal wire:model="currentlyManagingRole">
+        
         <x-slot name="title">
             {{ __('Manage Role') }}
         </x-slot>

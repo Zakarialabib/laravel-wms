@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
                 {{-- @can('role-create') --}}
                 <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3"
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 @endif
-                <table class="min-w-full my-3 divide-y divide-gray-200">
+                <table class="table-auto w-full my-3 divide-y divide-gray-200">
                     <tr class="bg-gray-100">
                         <th class="">No</th>
                         <th class="px-4 py-2">Nom</th>
