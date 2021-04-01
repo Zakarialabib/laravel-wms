@@ -1,6 +1,6 @@
 <x-slot name="header">
     <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
-    Gestion des Articles
+        {{ __('Blog Posts') }}
     </h2>
 </x-slot>
 <div class="py-12">
@@ -15,7 +15,7 @@
                   </div>
                 </div>
             @endif
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Nouveau Article</button>
+            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">New Post</button>
             @if($isOpen)
                 @include('post.create')
             @endif
@@ -23,11 +23,11 @@
             <table class="table-auto w-full divide-y divide-gray-200">
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-4 py-2 w-20">No.</th>
-                        <th class="px-4 py-2">Titre</th>
-                        <th class="px-4 py-2">Description</th>
-                        <th class="px-4 py-2">Slug</th>
-                        <th class="px-4 py-2">Action</th>
+                        <th class="px-4 py-2 w-20">ID.</th>
+                        <th class="px-4 py-2">{{ __('Titre') }}</th>
+                        <th class="px-4 py-2">{{ __('Description') }}</th>
+                        <th class="px-4 py-2">{{ __('Slug') }}</th>
+                        <th class="px-4 py-2">{{ __('Action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,9 +40,9 @@
                         <td class="border px-4 py-2">{{ $post->slug }}</td>
 
                         <td class="border px-4 py-2">
-                        <a class="bg-green-550 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('posts-show',$post->id) }}">Voir</a>
-                        <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Modifier</button>
-                            <button wire:click="delete({{ $post->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Supprimer</button>
+                        <a class="bg-green-550 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('posts-show',$post->id) }}">{{ __('View') }}</a>
+                        <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{ __('Edit') }}</button>
+                            <button wire:click="delete({{ $post->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{{ __('Delete') }}</button>
                         </td>
                     </tr>
                     @endforeach

@@ -88,6 +88,6 @@ class SalesController extends Controller
         $users = User::all();
         $settings = Setting::all();
 
-        return view('sales', compact('sales', 'deliveries', 'products', 'users', 'settings'));
+        return view('livewire.sale', compact('sales', 'deliveries', 'products', 'users', 'settings'));
     }
 }

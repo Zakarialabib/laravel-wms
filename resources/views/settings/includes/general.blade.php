@@ -1,4 +1,4 @@
-<div class="tile">
+<div class="tile" id="generalsettings">
     <form action="{{ route('settings.update') }}" method="POST" role="form">
         @csrf
         <h3 class="tile-title">General Settings</h3>

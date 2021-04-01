@@ -15,9 +15,8 @@ class Delivery extends Component
 {
     use WithPagination;
 
-    public $delivery_id, $sale_id , $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price;
-    public $search;
-    protected $updatesQueryString = ['search'];
+    public $delivery_id,$search, $sale_id , $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price;
+    protected $queryString = ['search'];
 
 
     public function mount(): void

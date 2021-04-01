@@ -11,9 +11,8 @@ class Customer extends Component
 {
     use WithPagination;
 
-    public $name ,$email, $phone ,$address, $status, $deleteId;
-    public $search;
-    protected $updatesQueryString = ['search'];
+    public $name ,$email, $phone ,$address, $status, $deleteId, $search;
+    protected $queryString = ['search'];
 
 
     public function mount(): void

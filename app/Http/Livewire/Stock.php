@@ -13,9 +13,8 @@ class Stock extends Component
 {
     use WithPagination;
 
-    public $stock_id, $product_id ,$quantity, $product;
-    public $search;
-    protected $updatesQueryString = ['search'];
+    public $stock_id, $product_id ,$quantity, $product,$search;
+    protected $queryString = ['search'];
 
 
     public function mount(): void

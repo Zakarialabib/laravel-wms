@@ -10,9 +10,8 @@ class Pricings extends Component
 {
     use WithPagination;
 
-    public $pricing_id, $city, $region, $price , $deleteId;
-    public $search;
-    protected $updatesQueryString = ['search'];
+    public $pricing_id, $search, $city, $region, $price , $deleteId;
+    protected $queryString = ['search'];
 
     public function mount(): void
 {

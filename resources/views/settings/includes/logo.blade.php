@@ -1,4 +1,4 @@
-<div class="tile">
+<div class="tile" id="logo">
     <form action="{{ route('settings.update') }}" method="POST" role="form" enctype="multipart/form-data">
         @csrf
         <h3 class="tile-title">Site Logo</h3>

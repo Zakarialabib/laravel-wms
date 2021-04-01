@@ -8,36 +8,36 @@
       </div>
     </div>
    @endif
-    <h3 class="panel-heading">Create Customer</h3>
+    <h3 class="panel-heading">{{ __('Create Customer') }}</h3>
     <form wire:submit.prevent="store">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="flex flex-wrap -m-2">
             <div class="w-1/2 p-2">
-                <label for="name"> Name* </label>
+                <label for="name"> {{ __('Name') }}* </label>
                 <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="name" value="{{ old('name') }}" wire:model="name">
                 @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
         <div class="w-1/2 p-2">
-            <label for="phone">Phone* </label>
+            <label for="phone">{{ __('Phone') }}* </label>
             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="phone" value="{{ old('phone') }}"  wire:model="phone">
             @error('phone') <span class="text-red-500">{{ $message }}</span>@enderror
         </div>
         <div class="w-1/2 p-2">
-            <label for="email"> Email* </label>
+            <label for="email"> {{ __('Email') }}* </label>
             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="email" name="email"  value="{{ old('address') }}" wire:model="email">
             @error('email') <span class="text-red-500">{{ $message }}</span>@enderror
         </div>
         <div class="w-1/2 p-2">
-            <label for="address"> address* </label>
+            <label for="address"> {{ __('Address') }}* </label>
             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="address" value="{{ old('address') }}"  wire:model="address">
             @error('address') <span class="text-red-500">{{ $message }}</span>@enderror
         </div>
         <div class="w-1/2 p-2">
-            <label for="status">Status* </label>
+            <label for="status">{{ __('Status') }}* </label>
             <select wire:model="status" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="status">
             <option value="{{ old('status') }}"></option>    
-            <option name="status" value='active'>active</option>
-            <option name="status" value='not-active'>Not active</option>
+            <option name="status" value='active'>{{ __('Active') }}</option>
+            <option name="status" value='not-active'>{{ __('Not active') }}</option>
             </select>
             @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
         </div> 
@@ -48,7 +48,7 @@
     </form>
             <div class="flex flex-row my-5 justify-between w-full">
                 <h2 class="text-2xl leading-tight">
-                  Customer list
+                    {{ __('Customer list') }}
                 </h2>
                <div class="flex w-full max-w-sm space-x-3" >
                   <input type="text" wire:model="search"  class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Recherche par Nom Client" />
@@ -59,14 +59,14 @@
                 <thead>
                     <tr>
                         <th>ID.</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">name</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">phone</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">email</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">address</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">status</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">Created At</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">Updated At</th>
-                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">Action</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Name') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Phone') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Email') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Address') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Status') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Created At') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Updated At') }}</th>
+                        <th class=" border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">{{ __('Action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,11 +83,11 @@
                         <td class="border flex td class=">
                     {{--     @can('customers-delete')    --}}                     
                 
-                    <a href="{{ route('customers.edit', $customer->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-2 rounded">Edit</a>
+                    <a href="{{ route('customers.edit', $customer->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-2 rounded">{{ __('Edit') }}</a>
                 {{--        <button wire:click="edit({{ $customer->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button>    
                        <button wire:click="delete({{ $customer->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold px-2 py-2 rounded">Supprimer</button>--}}  
                        <button type="button" wire:click="deleteId({{ $customer->id }})" class="btn btn-danger"
-                        data-toggle="modal" data-target="#exampleModal">Delete</button>
+                        data-toggle="modal" data-target="#exampleModal">{{ __('Delete') }}</button>
 
                        {{--  @endcan --}}
                         </td>

@@ -15,9 +15,8 @@ class Sale extends Component
 {
     use WithPagination;
 
-    public $saleId, $product_id ,$user_id, $quantity ,$status;
-    public $search;
-    protected $updatesQueryString = ['search'];
+    public $saleId, $product_id ,$user_id, $quantity ,$status, $search;
+    protected $queryString = ['search'];
 
 
     public function mount(): void

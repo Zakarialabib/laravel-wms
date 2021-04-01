@@ -140,7 +140,7 @@
                             </svg>
                         </span>
                         <span class="mx-4 text-sm font-normal">
-                            {{ __('Articles') }}
+                            {{ __('Blog Posts') }}
                         </span>
                     </a>
                     <a class="w-full font-thin uppercase text-white dark:text-gray-200 flex items-center p-2 transition-colors duration-200 justify-start hover:bg-green-500 my-2" href="{{ url('users') }}" >

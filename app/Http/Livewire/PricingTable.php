@@ -10,10 +10,9 @@ class PricingTable extends Component
 {
     use WithPagination;
     
-    public $city, $region, $price;
-    public $search;
+    public $city, $region, $price, $search;
     protected $pricings;
-    protected $updatesQueryString = ['search'];
+    protected $queryString = ['search'];
 
     public function mount(): void
 {

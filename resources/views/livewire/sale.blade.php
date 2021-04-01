@@ -1,3 +1,11 @@
+<x-app-layout>
+    <x-slot name="header">
+            <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
+                {{ __('Sales Dashbord') }}
+            </h2>
+        </x-slot>
+    <div class="py-12">
+        <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg my-4 px-4 py-4">
     @if (session()->has('message'))
     <div class="bg-green-300 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
@@ -115,3 +123,6 @@
             {{ $sales->links('layouts.tailwind') }}
 
         </div>
+    </div>
+</div>
+</x-app-layout>
