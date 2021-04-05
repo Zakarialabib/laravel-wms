@@ -3,21 +3,19 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Livewire\WithPagination;
-use Illuminate\Http\Request;
 use App\Models\Deliveries;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Sales;
-
+use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class Delivery extends Component
 {
     use WithPagination;
 
-    public $delivery_id,$search, $sale_id , $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price;
+    public $delivery_id, $search, $sale_id, $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price, $deleteId;
     protected $queryString = ['search'];
-
 
     public function mount(): void
     {
@@ -28,13 +26,12 @@ class Delivery extends Component
     {
      ///   $this->sales = Deliveries::query()
      /// ->where('user_id', Auth::id());
-        
-        $this->deliveries = Deliveries::paginate(5);
-
-        $products = Products::all();
-        $users = User::all();
-        $sales = Sales::all();
-
+     
+     $products = Products::all();
+     $users = User::all();
+     $sales = Sales::all();
+     
+     $this->deliveries = Deliveries::paginate(5);
         return view('livewire.delivery', compact('sales','users','products'),[
             'deliveries' => $this->search === null ?
             Deliveries::paginate(5) :
@@ -73,5 +70,30 @@ class Delivery extends Component
         } else {
             return  back()->with('error', 'Deliveries ID doesn\'t exist!');
         }
-  }
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function deleteId($id)
+
+    {
+        $this->deleteId = $id;
+        session()->flash('message', 'Delivery Deleted Successfully.');
+
+    }
+
+      /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function delete()
+    {
+        Deliveries::find($this->deleteId)->delete();
+        session()->flash('message', 'Delivery Deleted Successfully.');
+
+    }
 }

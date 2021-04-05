@@ -15,6 +15,7 @@ class CreateSalesTable extends Migration
 		$table->text('status');
 		$table->integer('quantity');
 		$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        $table->timestamps();
         });
 
     }

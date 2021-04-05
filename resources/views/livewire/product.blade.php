@@ -1,7 +1,7 @@
 <div>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg my-4 px-4 py-4">
         @if (session()->has('message'))
-        <div class="bg-green-300 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3"
+        <div class="bg-green-550 border-t-4 border-green-300 rounded-b text-black font-bold px-4 py-3 shadow-md my-3"
             role="alert">
             <div class="flex">
                 <div>
@@ -10,28 +10,28 @@
             </div>
         </div>
         @endif
-        <h3 class="panel-heading">Create product</h3>
+        <h3 class="panel-heading">{{ __('Create product') }}</h3>
         <div class="panel-body">
             <div>
                 <form wire:submit.prevent="store">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="flex flex-wrap -m-2">
                         <div class="w-1/2 p-2">
-                            <label for="name">Name* </label>
+                            <label for="name">{{ __('Name') }}* </label>
                             <input
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="text" name="name" :value="old('name')" wire:model="name">
                             @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/2 p-2">
-                            <label for="price"> Price* </label>
+                            <label for="price">{{ __('Price') }}* </label>
                             <input
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="text" name="price" :value="old('price')" wire:model="price">
                             @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-full p-2">
-                            <label for="description"> Description* </label>
+                            <label for="description">{{ __('Description') }}* </label>
                             <textarea
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="description" name="description" :value="old('description')"
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <button
-                            class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded">Submit</button>
+                            class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded">{{ __('Submit') }}</button>
                     </div>
                 </form>
             </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
 
-        <h3 class="panel-heading">Product list</h3>
+        <h3 class="panel-heading">{{ __('Product list') }}</h3>
 
         <input type="text" wire:model="search"
             class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline"
@@ -60,23 +60,23 @@
                 <tr>
                     <th>ID.</th>
                     <th 
-                        class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        name</th>
+                        class="text-gray-800  text-left text-sm uppercase font-normal">
+                        {{ __('Name') }}</th>
+                    <th 
+                        class="text-gray-800  text-left text-sm uppercase font-normal">
+                        {{ __('price') }}</th>
                     <th 
                         class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        price</th>
+                        {{ __('Description') }}</th>
                     <th 
                         class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        description</th>
+                        {{ __('Created At') }}</th>
                     <th 
                         class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        Created At</th>
+                        {{ __('Updated At') }}</th>
                     <th 
                         class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        Updated At</th>
-                    <th 
-                        class="  text-gray-800  text-left text-sm uppercase font-normal">
-                        Action</th>
+                        {{ __('Action') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -91,7 +91,7 @@
                     <td class="border inline-flex px-3 py-3">
                         {{--     @can('products-delete')    --}}
                         <button type="button" wire:click="deleteId({{ $product->id }})" class="btn btn-danger"
-                            data-toggle="modal" data-target="#exampleModal">Delete</button>
+                            data-toggle="modal" data-target="#exampleModal">{{ __('Delete') }}</button>
                         {{-- 
                     <a href="{{ route('products.edit', $product->id) }}" class="bg-blue-500 hover:bg-blue-700
                         text-white font-bold px-5 py-2.5 rounded">Edit</a>
@@ -123,7 +123,7 @@
 
                 <div class="modal-header">
 
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Confirm</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('Delete Confirm') }}</h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -135,16 +135,16 @@
 
                 <div class="modal-body">
 
-                    <p>Are you sure want to delete?</p>
+                    <p>{{ __('Are you sure want to delete') }}?</p>
 
                 </div>
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">{{ __('Close') }}</button>
 
                     <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
-                        data-dismiss="modal">Yes, Delete</button>
+                        data-dismiss="modal">{{ __('Yes, Delete') }}</button>
 
                 </div>
 

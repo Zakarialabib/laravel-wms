@@ -55,7 +55,7 @@ class SalesController extends Controller
 
         $sale = Sales::find($id);
         $sale->product_id = $request->get('product_id');
-        $sale->product_id = $request->get('user_id');
+        $sale->user_id = $request->get('user_id');
         $sale->status = $request->get('status');
         $sale->quantity = $request->get('quantity');
 
@@ -88,6 +88,6 @@ class SalesController extends Controller
         $users = User::all();
         $settings = Setting::all();
 
-        return view('livewire.sale', compact('sales', 'deliveries', 'products', 'users', 'settings'));
+        return view('sales', compact('sales', 'deliveries', 'products', 'users', 'settings'));
     }
 }

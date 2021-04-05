@@ -19,6 +19,8 @@ class CreateDeliveriesTable extends Migration
             $table->foreign('sale_id')->references('id')->on('sales');
             $table->string('recipient');
             $table->string('address');
+            $table->string('tracking_number');
+            $table->decimal('price', 10, 0);
             $table->date('expected_arrival');
             $table->date('actual_arrival')->nullable();
             $table->enum('status', array('processing', 'shipping', 'complete'));

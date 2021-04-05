@@ -16,13 +16,16 @@ class CreateVendorsTable extends Migration
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
             $table->text('status');
-            $table->foreignId('user_id');
-            $table->foreignId('stock_id')->constrained('stocks')->onDelete('cascade');
-            $table->foreignId('delivery_id')->constrained('deliveries')->onDelete('cascade');
-            $table->foreignId('sale_id')->constrained('sales')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('stock_id')->unsigned();
+            $table->integer('delivery_id')->unsigned();
+            $table->integer('product_id')->unsigned();
         });    
+
+        Schema::table('vendors', function($table) {
+            $table->foreign('stock_id')->references('id')->on('stocks')->onDelete('cascade');
+            $table->foreign('delivery_id')->references('id')->on('deliveries')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+        });
     }
 
  

@@ -14,7 +14,6 @@ class Product extends Component
     public $product_id, $search, $name ,$price, $description, $deleteId;
     protected $queryString = ['search'];
 
-
     public function mount(): void
     {
         $this->search = request()->query('search', $this->search);
@@ -52,7 +51,6 @@ class Product extends Component
 
     }
 
-
     /**
      * The attributes that are mass assignable.
      *
@@ -62,13 +60,8 @@ class Product extends Component
 
     {
         $this->deleteId = $id;
-        session()->flash('message', 'Post Deleted Successfully.');
-
+        session()->flash('message', 'Product Deleted Successfully.');
     }
-
-
-
-
     
       /**
      * The attributes that are mass assignable.
@@ -79,7 +72,7 @@ class Product extends Component
 
     {
         Products::find($this->deleteId)->delete();
-        session()->flash('message', 'Post Deleted Successfully.');
+        session()->flash('message', 'Product Deleted Successfully.');
 
     }
 }

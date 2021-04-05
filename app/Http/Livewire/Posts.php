@@ -10,7 +10,7 @@ class Posts extends Component
 {
     use WithFileUploads;
 
-    public $posts, $title, $slug ,$image, $body, $post_id, $meta_description, $meta_keyword ;
+    public $posts, $user_id, $title, $slug ,$image, $body, $post_id, $meta_description, $meta_keyword ;
     public $isOpen = 0;  
 
 
@@ -27,6 +27,18 @@ class Posts extends Component
     }
 
 
+   /**
+
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $posts = Post::find($id);
+        return view('livewire.show-posts',compact('posts'));
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -79,13 +91,18 @@ class Posts extends Component
     public function store()
     {
         $this->validate([
+            'user_id' => '',
             'title' => 'required',
             'body' => 'required',
             'slug'=>'required|min:3|max:255', 
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+            'meta_description' => 'min:3|max:60',
+            'meta_keyword' => 'min:3|max:170',
+
+            ]);
         $filename = $this->image->store("/");
         Post::updateOrCreate(['id' => $this->post_id], [
+            'user_id' => $this->user_id,
             'title' => $this->title,
             'body' => $this->body,
             'slug' => $this->slug, 
@@ -108,6 +125,7 @@ class Posts extends Component
     {
         $post = Post::findOrFail($id);
         $this->post_id = $id;
+        $this->user_id = $post->user_id;
         $this->title = $post->title;
         $this->body = $post->body;
         $this->slug = $post->slug;

@@ -41,7 +41,7 @@ Route::post('contact-us', [ HomeController::class, 'saveContact' ])->name('conta
 
 Route::middleware(['auth:sanctum', 'approved','verified'])->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/sales', [\App\Http\Livewire\Sale::class,'render'])->name('sales');
+Route::get('/sales', [SalesController::class,'index'])->name('sales');
 Route::get('/deliverie', [DeliveriesController::class, 'index'])->name('deliveries');
 Route::get('/customers', [CustomersController::class, 'index'])->name('customers');
 Route::get('/stock', [StockController::class, 'index'])->name('stock');

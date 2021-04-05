@@ -1,8 +1,9 @@
+<div>
 <div class="panel panel-default">
     <div class="panel-body">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @if (session()->has('message'))
-            <div class="bg-green-300 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
+            <div class="bg-green-550 border-t-4 border-green-300 rounded-b text-black font-bold px-4 py-3 shadow-md my-3" role="alert">
               <div class="flex">
                 <div>
                   <p class="text-sm">{{ session('message') }}</p>
@@ -10,31 +11,30 @@
               </div>
             </div>
         @endif
-        <h3 class="panel-heading">Create Pricing</h3>
-
+    <h3 class="panel-heading"> {{ __('Create Pricing') }}</h3>
     <form wire:submit.prevent="store">
         <div class="flex flex-wrap -m-2">
             <div class="w-1/2 p-2">
-                <label for="region">Region* </label>
+                <label for="region">{{ __('Region') }}* </label>
                 <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="region" :value="old('region')" wire:model="region" >
                 @error('region') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
 
             <div class="w-1/2 p-2">
-                <label for="city">Ville* </label>
+                <label for="city">{{ __('City') }}* </label>
                 <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="city" :value="old('city')"  wire:model="city" >
                 @error('city') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
 
             <div class="w-1/2 p-2">
-                <label for="price">Tarif* </label>
+                <label for="price">{{ __('Price') }}* </label>
                 <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="price" :value="old('price')"  wire:model="price" >
                 @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
             </div>
           </div>
 
             <div class="form-group">
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" >Enregistrer</button>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded" >{{ __('Save') }}</button>
             </div>
         </form>
     </div>
@@ -51,12 +51,12 @@ placeholder="Recherche par Nom Client" />
                         <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Region</td>
-                                <td>Ville</td>
-                                <td>Tarif</td>
-                                <td>Created At</td>
-                                <td>Updated At</td>
-                                <td colspan=2>Actions</td>
+                                <td>{{ __('Region') }}</td>
+                                <td>{{ __('City') }}</td>
+                                <td>{{ __('Price') }}</td>
+                                <td>{{ __('Created At') }}</td>
+                                <td>{{ __('Updated At') }}</td>
+                                <td colspan=2>{{ __('Actions') }}</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,9 +69,9 @@ placeholder="Recherche par Nom Client" />
                                 <td>{{$p->created_at}}</td>
                                 <td>{{$p->updated_at}}</td>
                                 <td>
-                                    <button wire:click="edit({{ $p->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Modifier</button>
+                                    <button wire:click="edit({{ $p->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{ __('Edit') }}r</button>
                                     <button type="button" wire:click="deleteId({{ $p->id }})" class="btn btn-danger"
-                                        data-toggle="modal" data-target="#exampleModal">Delete</button>
+                                        data-toggle="modal" data-target="#exampleModal">{{ __('Delete') }}</button>
             
                                 </td>
                             </tr>
@@ -98,7 +98,7 @@ placeholder="Recherche par Nom Client" />
 
             <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLabel">Delete Confirm</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ __('Delete Confirm') }}</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -110,7 +110,7 @@ placeholder="Recherche par Nom Client" />
 
             <div class="modal-body">
 
-                <p>Are you sure want to delete?</p>
+                <p>{{ __('Are you sure want to delete') }}?</p>
 
             </div>
 
@@ -119,7 +119,7 @@ placeholder="Recherche par Nom Client" />
                 <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
 
                 <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
-                    data-dismiss="modal">Yes, Delete</button>
+                    data-dismiss="modal">{{ __('Yes, Delete') }}</button>
 
             </div>
 
@@ -127,4 +127,5 @@ placeholder="Recherche par Nom Client" />
 
     </div>
 
+</div>
 </div>

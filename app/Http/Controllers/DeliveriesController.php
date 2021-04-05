@@ -10,8 +10,6 @@ use App\Models\User;
 
 class DeliveriesController extends Controller
 {
-
-
     public function edit($id)
     {
         $delivery = Deliveries::find($id);

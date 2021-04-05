@@ -1,7 +1,7 @@
 <aside class="main-sidebar elevation-4 main-sidebar sidebar-dark-primary">
     <div class="sidebar pt-0 mt-0">     
       <div class="flex items-center justify-center pt-6">
-                <x-jet-dropdown align="left">
+                <x-jet-dropdown align="left">   
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
@@ -34,6 +34,37 @@
                             <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-jet-dropdown-link>
+                        @endif
+                        <!-- Team Management -->
+
+                        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Manage Team') }}
+                        </div>
+
+                        <!-- Team Settings -->
+                        <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                            {{ __('Team Settings') }}
+                        </x-jet-dropdown-link>
+
+                        @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                            <x-jet-dropdown-link href="{{ route('teams.create') }}">
+                                {{ __('Create New Team') }}
+                            </x-jet-dropdown-link>
+                        @endcan
+
+                        <div class="border-t border-gray-100"></div>
+
+                        <!-- Team Switcher -->
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Switch Teams') }}
+                        </div>
+
+                        @foreach (Auth::user()->allTeams() as $team)
+                            <x-jet-switchable-team :team="$team" />
+                        @endforeach
+
                         @endif
 
                         <div class="border-t border-gray-100"></div>
@@ -174,6 +205,17 @@
                         </span>
                         <span class="mx-4 text-sm font-normal">
                             {{ __('Settings') }}
+                        </span>
+                    </a>
+                    <a class="w-full font-thin uppercase text-white dark:text-gray-200 flex items-center p-2 transition-colors duration-200 justify-start hover:bg-green-500 my-2" href="{{ url('/translations') }}">
+                        <span class="text-left">
+                            <svg width="20" fill="currentColor" height="20" class="h-5 w-5" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1088 1256v240q0 16-12 28t-28 12h-240q-16 0-28-12t-12-28v-240q0-16 12-28t28-12h240q16 0 28 12t12 28zm316-600q0 54-15.5 101t-35 76.5-55 59.5-57.5 43.5-61 35.5q-41 23-68.5 65t-27.5 67q0 17-12 32.5t-28 15.5h-240q-15 0-25.5-18.5t-10.5-37.5v-45q0-83 65-156.5t143-108.5q59-27 84-56t25-76q0-42-46.5-74t-107.5-32q-65 0-108 29-35 25-107 115-13 16-31 16-12 0-25-8l-164-125q-13-10-15.5-25t5.5-28q160-266 464-266 80 0 161 31t146 83 106 127.5 41 158.5z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="mx-4 text-sm font-normal">
+                            {{ __('Translations') }}
                         </span>
                     </a>
                 </div>

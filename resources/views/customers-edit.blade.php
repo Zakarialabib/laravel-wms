@@ -2,7 +2,7 @@
 
 <x-slot name="header">
     <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
-    Edit Customer
+        {{ __('Edit Customer') }}
     </h2>
 </x-slot>
 <div class="container">
@@ -20,28 +20,27 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label for="name">name* </label>
+                            <label for="name">{{ __('Name') }}* </label>
                             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="name" value="{{$customer->name}}" >
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">phone* </label>
+                            <label for="phone">{{ __('Phone') }}* </label>
                             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="phone" value="{{$customer->phone}}" >
                         </div>
 
                         <div class="form-group">
-                            <label for="email">email* </label>
+                            <label for="email">{{ __('Email') }}* </label>
                             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="email" value="{{$customer->email}}" >
                         </div>
 
-
                         <div class="form-group">
-                            <label for="address">address* </label>
+                            <label for="address">{{ __('Address') }}* </label>
                             <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="text" name="address" value="{{$customer->address}}" >
                         </div>
 
                         <div class="form-group">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">Submit</button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded" type="submit">{{ __('Submit') }}</button>
                         </div>
                     </form>
                 </div>

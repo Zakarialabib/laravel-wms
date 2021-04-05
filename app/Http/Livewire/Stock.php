@@ -22,31 +22,20 @@ class Stock extends Component
         $this->search = request()->query('search', $this->search);
     }
 
-    public function store()
-    {
-        $validatedDate = $this->validate([
-            'product_id' => 'required|unique:stocks',
-            'quantity' => 'required|integer|min:0',
-        ]);
-        Stocks::create($validatedDate);
-        return back()->with('message', 'Stock Created Successfully.');
-       
-    }
-
     public function render()
     {
 
      ///   $this->stock = Stock::query()
      /// ->where('user_id', Auth::id());
 
-     $this->stocks = Stocks::paginate(5);
-
+     
      $products = Products::all();
-    //  $products = DB::table('products')->pluck('name');
-      
-    //$products = Products::all();
-      //  \dd($product_id);
-    
+     //  $products = DB::table('products')->pluck('name');
+     //$products = Products::all();
+     //  \dd($product_id);
+     
+        $this->stocks = Stocks::query()
+        ->paginate(5);
         return view('livewire.stock',compact('products'),
       [
             'stocks' => $this->search === null ?
@@ -57,6 +46,23 @@ class Stock extends Component
         ]);
      
     }
+
+    public function store()
+    {
+        $this->validate([
+            'product_id' => 'required|unique:stocks',
+            'quantity' => 'required|integer|min:0',
+        ]);
+        Stocks::updateOrCreate(['id' => $this->stock_id], [
+            'product_id' => $this->product_id,
+            'quantity' => $this->quantity,
+        ]);
+        session()->flash('message', 
+            $this->stock_id ? 'Product Updated Successfully.' : 'Product Created Successfully.');
+
+    }
+
+    
 
    
 

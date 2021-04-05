@@ -10,7 +10,7 @@
         <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
             <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3" href="{{ route('users.create') }}"> Nouveau utilisateur </a>
 @if (session()->has('success'))
-                <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
+                <div class="bg-green-550 border-t-4 border-green-300 rounded-b text-black font-bold px-4 py-3 shadow-md my-3" role="alert">
                   <div class="flex">
                     <div>
                       <p class="text-sm">{{ session('success') }}</p>
