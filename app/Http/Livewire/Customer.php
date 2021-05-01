@@ -13,9 +13,9 @@ class Customer extends Component
 
     public $name ,$email, $phone ,$address, $status, $deleteId, $search;
     protected $queryString = ['search'];
-
-
-    public function mount(): void
+    public Customers $customer;
+    
+    public function mount(Customers $customer)
     {
         $this->search = request()->query('search', $this->search);
     }
@@ -46,19 +46,6 @@ class Customer extends Component
         ]);
         Customers::create($validatedDate);
         return back()->with('message', 'Customer Created Successfully.');
-    }
-
-    public function edit($id)
-    {
-        $customers = Customers::findOrFail($id);
-        $validatedDate = $this->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'address' => 'required',
-        ]);
-        Customers::create($validatedDate);
-        return back()->with('message', 'Customers Updated Successfully.');
     }
 
 

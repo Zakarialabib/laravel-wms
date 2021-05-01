@@ -16,17 +16,17 @@ class Products extends Model
     
     public function sale()
     {
-        return $this->belongsToMany(Sales::class);
+        return $this->belongsToMany(Sales::class , 'sale_id' , 'id');
     }
 
     public function stocks()
     {
-        return $this->belongsToMany(Products::class);
+        return $this->belongsToMany(Stocks::class, 'stock_id' , 'id');
     }
 
-    public function vendors()
+    public function stores()
     {
-        return $this->belongsTo(Vendors::class);
+        return $this->belongsTo(Stores::class ,'store_id' , 'id');
     }
 
 }

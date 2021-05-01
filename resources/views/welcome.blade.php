@@ -1,24 +1,25 @@
 @extends('layouts.web')
-@section('content')   
-@include('components.header')
+@section('content')
+
+    @include('components.header')
+
     <div class="relative bg-white overflow-hidden">
-  <div class="max-w-full mx-auto">
-    <div class="relative z-10 lg:max-w-screen lg:w-full" style="background-color: #ffffffbf">
-      @include('components.your_delivery_partner')
+        <div class="max-w-full mx-auto">
+            <div class="relative z-10 lg:max-w-screen lg:w-full" style="background-color: #ffffffbf">
+                @include('components.your_delivery_partner')
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-@include('components.why_choose_us')
 
-@include('components.our-services')
+    @include('components.why_choose_us')
 
-@include('components.pricing')
- 
-@include('components.contact-us')
+    @include('components.our-services')
 
-@include('components.footer')
-<!--
-<section class="tracking_box_area section_gap py-5">
+    @include('components.contact-us')
+
+    @include('components.footer')
+
+    {{-- <section class="tracking_box_area section_gap py-5">
   <div class="container">
       <div class="tracking_box_inner">
           <p>To track your order please enter your Order ID in the box below and press the "Track" button. This was given
@@ -34,8 +35,6 @@
           </form>
       </div>
   </div>
-</section>
--->
-
+</section> --}}
 
 @endsection

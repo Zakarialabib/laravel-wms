@@ -5,29 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vendors extends Model
+class Stores extends Model
 {
 
     protected $fillable = [
+        'company_name',
+        'balance',
         'status',
-        'product_id',
-        'sale_id',   
-        'user_id'     
+        'user_id' ,
     ];
     
     public function user()
     {
-        return $this->BelongsTo(Users::class);
+        return $this->BelongsTo(User::class ,'user_id' , 'id');
     }
 
     public function sale()
     {
-        return $this->HasMany(Sales::class);
+        return $this->HasMany(Sales::class ,'sale_id' , 'id');
     }
 
     public function products()
     {
-        return $this->HasMany(Products::class);
+        return $this->HasMany(Products::class, 'product_id' , 'id');
     }
 
 }

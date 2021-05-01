@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{{ asset('/public/css/adminlte.min.css') }}">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{ asset('/public/css/fontawesome-free/css/all.min.css') }}">
-
+        @stack('styles')
         <!-- Scripts -->
         <script src="{{ asset('/public/js/app.js') }}" defer></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -51,7 +51,8 @@
         @stack('modals')
         <script src="{{ asset('/public/js/jquery.min.js') }}"></script>
         <script src="{{ asset('/public/js/popper.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.js" defer=""></script>
+        @livewire('livewire-ui-modal')
+        @livewireUIScripts
         @livewireScripts
         @bukScripts
     </body>
