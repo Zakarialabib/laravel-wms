@@ -98,7 +98,7 @@ class Posts extends Component
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'meta_description' => 'min:3|max:60',
             'meta_keyword' => 'min:3|max:170',
-
+            'user_id' => '',
             ]);
         $filename = $this->image->store("/");
         Post::updateOrCreate(['id' => $this->post_id], [
@@ -109,6 +109,7 @@ class Posts extends Component
             'image' => $filename,
             'meta_description' => $this->meta_description,
             'meta_keyword' => $this->meta_keyword,
+            'user_id' => $this->user_id  = Auth::id(), 
         ]);
         session()->flash('message', 
             $this->post_id ? 'Post Updated Successfully.' : 'Post Created Successfully.');

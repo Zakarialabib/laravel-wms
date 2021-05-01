@@ -97,8 +97,6 @@
                         text-white font-bold px-5 py-2.5 rounded">Edit</a>
                         <button wire:click="edit({{ $product->id }})"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button>
-                        <button wire:click="delete({{ $product->id }})"
-                            class="bg-red-500 hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded">Supprimer</button>
                         --}}
 
                         {{--  @endcan --}}

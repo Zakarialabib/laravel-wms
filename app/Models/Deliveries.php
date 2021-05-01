@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deliveries extends Model
 {
+    const STATUS_Processing = 1;
+    const STATUS_Shipping = 2; 
+    const STATUS_Completed = 3;
+    const STATUS_Returned = 4;
+
     protected $fillable = [
         'id',
         'sale_id',
@@ -18,6 +23,7 @@ class Deliveries extends Model
         'actual_arrival',
         'status',
         'description',
+        'user_id'
     ];
 
     public function sales()

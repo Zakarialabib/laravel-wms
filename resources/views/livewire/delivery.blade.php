@@ -1,14 +1,14 @@
 <div>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg my-4 px-4 py-4">
         @if (session()->has('message'))
-        <div class="bg-green-550 border-t-4 border-green-300 rounded-b text-black font-bold px-4 py-3 shadow-md my-3"
-            role="alert">
-            <div class="flex">
-                <div>
-                    <p class="text-sm">{{ session('message') }}</p>
+            <div class="bg-green-550 border-t-4 border-green-300 rounded-b text-black font-bold px-4 py-3 shadow-md my-3"
+                role="alert">
+                <div class="flex">
+                    <div>
+                        <p class="text-sm">{{ session('message') }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
         @endif
         <h3 class="panel-heading">{{ __('Create Delivery') }}</h3>
         <div class="panel-body">
@@ -22,7 +22,7 @@
                                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option :value="old('sale_id')"></option>
                                 @foreach ($sales as $sale)
-                                <option value="{{$sale->id}}">{{ $sale->id }}</option>
+                                    <option value="{{ $sale->id }}">{{ $sale->id }}</option>
                                 @endforeach
                             </select>
                             @error('sale_id') <span class="text-red-500">{{ $message }}</span>@enderror
@@ -73,9 +73,10 @@
                                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 wire:model="status" name="status">
                                 <option :value="old('status')"></option>
-                                <option name="status" value='processing'>{{ __('Processing') }}</option>
-                                <option name="status" value='shipping'>{{ __('Shipping') }}</option>
-                                <option name="status" value='complete'>{{ __('Complete') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_Processing}}'>{{ __('Processing') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_Shipping}}'>{{ __('Shipping') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_Completed}}'>{{ __('Completed') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_Returned}}'>{{ __('Returned') }}</option>
                             </select>
                             @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
@@ -104,7 +105,7 @@
             </div>
         </div>
     </div>
-<div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
         <div class="bg-white overflow-hidden sm:rounded-lg px-4 py-4">
             <div class="flex flex-row my-5 justify-between w-full">
                 <h2 class="text-2xl leading-tight">
@@ -146,69 +147,62 @@
                 <tbody>
                     <tr>
                         @foreach ($deliveries as $delivery)
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->id }}</td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->sale_id }}</td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->recipient}} </td>
-                        <td class="border-b border-gray-200  text-sm"> {{ $delivery->address }} </td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->expected_arrival }}</td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->actual_arrival }}</td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->status }}</td>
-                        <td class="border-b border-gray-200  text-sm"> {{ $delivery->description }} </td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->created_at }}</td>
-                        <td class="border-b border-gray-200  text-sm">{{ $delivery->updated_at }}</td>
-                        <td class="border inline-flex px-3 py-3">
-                            {{--     @can('deliveries-delete')    --}}
-
-                            <a href="{{ route('deliveries.edit', $delivery->id) }}"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Edit</a>
-                            {{--   
-                    <form action="{{ route('deliveries.destroy', $delivery->id)}}" method="POST">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded"
-                                type="submit">Delete</button>
-                            </form>
-                            <button wire:click="delete({{ $delivery->id }})"
-                                class="bg-red-500 hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded">Supprimer</button>
-                            <button wire:click="edit({{ $delivery->id }})"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button>
-                            --}}
-                            <button type="button" wire:click="deleteId({{ $delivery->id }})" class="btn btn-danger"
-                                data-toggle="modal" data-target="#exampleModal">{{ __('Delete') }}</button>
-
-                            {{--  @endcan --}}
-                        </td>
-
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->id }}</td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->sale_id }}</td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->recipient }} </td>
+                            <td class="border-b border-gray-200  text-sm"> {{ $delivery->address }} </td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->expected_arrival }}</td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->actual_arrival }}</td>
+                            <td class="border-b border-gray-200  text-sm">
+                                @if($delivery->status == App\Models\Deliveries::STATUS_Processing)<span class="">{{__('Processing')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Shipping)<span class="">{{__('Shipping')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Completed)<span class="">{{__('Completed')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Returned)<span class="">{{__('Returned')}}</span>
+                                @endif
+                                {{ $delivery->status }}
+                            </td>
+                            <td class="border-b border-gray-200  text-sm"> {{ $delivery->description }} </td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->created_at }}</td>
+                            <td class="border-b border-gray-200  text-sm">{{ $delivery->updated_at }}</td>
+                            <td class="border inline-flex px-3 py-3">
+                                {{-- @can('deliveries-delete') --}}
+                                <a href="{{ route('deliveries.edit', $delivery->id) }}"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Edit</a>
+                                {{-- <button wire:click="edit({{ $delivery->id }})"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button> --}}
+                                <button type="button" wire:click="deleteId({{ $delivery->id }})"
+                                    class="btn btn-danger" data-toggle="modal"
+                                    data-target="#exampleModal">{{ __('Delete') }}</button>
+                                {{-- @endcan --}}
+                            </td>
+                        @endforeach
                     </tr>
-                    @endforeach
                 </tbody>
             </table>
-
-
-            {{--    {{ $deliveries->links('layouts.tailwind') }} --}}
+            {{-- {{ $deliveries->links('layouts.tailwind') }} --}}
 
         </div>
-</div>
-<div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{ __('Delete Confirm') }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true close-btn">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>{{ __('Are you sure want to delete') }}?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn"
-                    data-dismiss="modal">{{ __('Close') }}</button>
-                <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
-                    data-dismiss="modal">{{ __('Yes, Delete') }}</button>
+    </div>
+    <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('Delete Confirm') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true close-btn">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ __('Are you sure want to delete') }}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn"
+                        data-dismiss="modal">{{ __('Close') }}</button>
+                    <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
+                        data-dismiss="modal">{{ __('Yes, Delete') }}</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

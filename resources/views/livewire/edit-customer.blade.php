@@ -2,7 +2,6 @@
     <x-slot name="title">
         Edit Customers
     </x-slot>
-
     <x-slot name="content">
         <div class="row">
             <div class="col-md-12">
@@ -56,7 +55,6 @@
                     </div>
             </div>
         </x-slot>
-
     <x-slot name="buttons">
         <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded"
         wire:click="$emit('closeModal')">Close Modal</button>

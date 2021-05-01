@@ -16,7 +16,6 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('quantity');
-            $table->foreignId('sale_id')->nullable()->constrained('sales')->onDelete('cascade');
             $table->integer('product_id');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();

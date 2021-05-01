@@ -40,15 +40,17 @@
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="status">
                                         <option></option>
-                                        <option name="status" value='paid'>{{ __('Paid') }}</option>
-                                        <option name="status" value='not-paid'>{{ __('Not paid') }}</option>
+                                        <option name="status" value='{{App\Models\Sales::STATUS_Pending}}'>{{ __('Pending') }}</option>
+                                        <option name="status" value='{{App\Models\Sales::STATUS_Processing}}'>{{ __('Processing') }}</option>
+                                        <option name="status" value='{{App\Models\Sales::STATUS_Completed}}'>{{ __('Completed') }}</option>
+                                        <option name="status" value='{{App\Models\Sales::STATUS_Decline}}'>{{ __('Decline') }}</option>
                                     </select>
                                     @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
                                 </div>
 
                                 <div class="w-1/2 p-2">
                                     <label for="product_id">{{ __('Product ID') }}*</label>
-                                    <select name="product_id" wire:model="product_id.0"
+                                    <select name="product_id" wire:model="product_id"
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                         <option></option>
                                         @foreach ($products as $product)
@@ -63,11 +65,19 @@
                                     <label for="quantity">{{ __('Quantity') }}* </label>
                                     <input
                                         class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
-                                        type="text" name="quantity" wire:model="quantity.0">
-                                    @error('quantity.0') <span class="text-red-500">{{ $message }}</span>@enderror
+                                        type="text" name="quantity" wire:model="quantity">
+                                    @error('quantity') <span class="text-red-500">{{ $message }}</span>@enderror
                                 </div>
 
-                                <div class="w-full p-2">
+                                <div class="w-1/2 p-2">
+                                    <label for="sale_number">{{ __('Sale number') }}* </label>
+                                    <input
+                                        class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                        type="text" name="sale_number" wire:model="sale_number">
+                                    @error('sale_number') <span class="text-red-500">{{ $message }}</span>@enderror
+                                </div>
+
+                                {{-- <div class="w-full p-2">
                                     <button class="bg-green-500 hover:bg-green-700 text-white font-bold w-12 rounded"
                                         wire:click.prevent="add({{ $i }})">Add</button>
                                 </div>
@@ -102,12 +112,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
+                                @endforeach --}}
 
-                            <div class="form-group">
+                            <div class="w-full block">
                                 <button
-                                    class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full rounded"
+                                    class="bg-green-500 hover:bg-green-700 text-white font-bold my-5 py-2 w-full block rounded"
                                     wire:click="store()">{{ __('Submit') }}</button>
                             </div>
                         </form>
@@ -152,24 +161,25 @@
                                 <td class="border-b border-gray-200  text-sm">{{ $product->name }}</td>
                                 <td class="border-b border-gray-200  text-sm">{{ $user->name }} </td>
                                 <td class="border-b border-gray-200  text-sm"> {{ $sale->quantity }} </td>
-                                <td class="border-b border-gray-200  text-sm">{{ $sale->status }}</td>
+                                <td class="border-b border-gray-200  text-sm">
+                                    @if($sale->status == App\Models\Sales::STATUS_Pending)<span class="">{{__('Pending')}}</span>
+                                    @elseif($sale->status == App\Models\Sales::STATUS_Processing)<span class="">{{__('Processing')}}</span>
+                                    @elseif($sale->status == App\Models\Sales::STATUS_Completed)<span class="">{{__('Completed')}}</span>
+                                    @elseif($sale->status == App\Models\Sales::STATUS_Decline)<span class="">{{__('Declined')}}</span>
+                                    @endif
+                                </td>
                                 <td class="border-b border-gray-200  text-sm">{{ $sale->created_at }}</td>
                                 <td class="border-b border-gray-200  text-sm">{{ $sale->updated_at }}</td>
                                 <td class="border inline-flex px-3 py-3">
                                     {{-- @can('sales-delete') --}}
 
-                                    <a href="{{ route('sales.edit', $sale->id) }}"
+                                    <a href=""
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-2 rounded">{{ __('Edit') }}</a>
 
-                                    {{-- <form action="{{ route('sales.destroy', $sale->id)}}" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-2 py-2 rounded" type="submit">Delete</button>
-                    </form> --}}
-                                    {{-- <button wire:click="edit({{ $sale->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button> --}}
-                                    <button wire:click="delete({{ $sale->id }})"
-                                        class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded">{{ __('Delete') }}</button>
-
+                                         {{--   <button wire:click="edit({{ $sale->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button> --}}
+                                        <button type="button" wire:click="deleteId({{ $sale->id }})" class="btn btn-danger"
+                                            data-toggle="modal" data-target="#exampleModal">{{ __('Delete') }}</button>
+                                               
                                     {{-- @endcan --}}
                                 </td>
                         </tr>
@@ -177,6 +187,30 @@
                     </tbody>
                 </table>
                 {{ $sales->links('layouts.tailwind') }}
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Modal -->
+    <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ __('Delete Confirm') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true close-btn">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ __('Are you sure want to delete') }}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-btn"
+                        data-dismiss="modal">{{ __('Close') }}</button>
+                    <button type="button" wire:click.prevent="delete()" class="btn btn-danger close-modal"
+                        data-dismiss="modal">{{ __('Yes, Delete') }}</button>
+                </div>
             </div>
         </div>
     </div>

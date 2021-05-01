@@ -11,16 +11,17 @@ use App\Models\User;
 use App\Models\Deliveries;
 use App\Models\Setting;
 use App\Http\Livewire\Field;
+use Illuminate\Support\Facades\Auth;
 
 class Sale extends Component
 {
     use WithPagination;
 
-    public $saleId, $product_id ,$user_id, $quantity ,$status, $search;
+    public $sale_id, $product_id , $sale_number ,$user_id, $quantity ,$status, $search,$deleteId;
     protected $queryString = ['search'];
     public $updateMode = false;
-    public $inputs = [];
-    public $i = 1;
+    // public $inputs = [];
+    // public $i = 1;
 
 
 
@@ -29,17 +30,17 @@ class Sale extends Component
         $this->search = request()->query('search', $this->search);
     }
 
-    public function add($i)
-    {
-        $i = $i + 1;
-        $this->i = $i;
-        array_push($this->inputs ,$i);
-    }
+    // public function add($i)
+    // {
+    //     $i = $i + 1;
+    //     $this->i = $i;
+    //     array_push($this->inputs ,$i);
+    // }
 
-    public function remove($i)
-    {
-        unset($this->inputs[$i]);
-    }
+    // public function remove($i)
+    // {
+    //     unset($this->inputs[$i]);
+    // }
 
     public function render()
     {
@@ -68,24 +69,64 @@ class Sale extends Component
 
     public function store()
     {
-        $validatedDate = $this->validate([
-            'product_id.0' => 'required',
-            'quantity.0' => 'required',
-            'product_id.*' => 'required',
-            'quantity.*' => 'required',
-            'user_id' => 'required',
+
+        $this->validate([
+            // 'product_id.0' => 'required',
+            // 'quantity.0' => 'required',
+            // 'product_id.*' => 'required',
+            // 'quantity.*' => 'required',
+            'product_id' => 'required',
+            'quantity' => 'required',
+            'sale_number' => 'required|unique:sales',
+            'user_id' => '',
             'status' => 'required',
         ]);
-        Sales::create($validatedDate);
-       
-        foreach ($this->product_id as $key => $value) {
-            Sales::create(['product_id' => $this->product_id[$key], 'quantity' => $this->quantity[$key]]);
-        }
+        Sales::updateOrCreate(['id' => $this->sale_id], [
+            'product_id' => $this->product_id,
+            'quantity' => $this->quantity,
+            'status' => $this->status, 
+            'sale_number' => $this->sale_number ,
+            'user_id' => $this->user_id  = Auth::id(), 
+        ]);
 
-        $this->inputs = [];
-        $this->resetInputFields();
-      
-        return back()->with('message', 'Sales Created Successfully.');
+       // Sales::create($validatedDate);
        
+        // foreach ($this->product_id as $key => $value) {
+        //     Sales::create([
+        //     'product_id' => $this->product_id[$key], 
+        //     'quantity' => $this->quantity[$key]
+        //     ]);
+        // }
+
+     //   $this->inputs = [];
+       //  $this->resetInputFields();
+      
+       session()->flash('message', 
+       $this->sale_id ? 'Sale Updated Successfully.' : 'Sale Created Successfully.');       
+    }
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function deleteId($id)
+
+    {
+        $this->deleteId = $id;
+        session()->flash('message', 'Sale Deleted Successfully.');
+    }
+    
+      /**
+     * The attributes that are mass assignable.
+     *
+     * @return response()
+     */
+    public function delete()
+
+    {
+        Sales::find($this->deleteId)->delete();
+        session()->flash('message', 'Sale Deleted Successfully.');
+
     }
 }

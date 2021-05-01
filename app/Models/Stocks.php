@@ -10,13 +10,12 @@ class Stocks extends Model
         'id',
         'product_id',
         'quantity',
-//        'category_id',
-  //      'unit_id',
+        'user_id',
     ];
 
     public function products()
     {
-        return $this->hasMany(products::class);
+        return $this->belongToMany(Products::class, 'product_id', 'id');
     }
 
 

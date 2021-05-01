@@ -23,6 +23,7 @@ class CreateDeliveriesTable extends Migration
             $table->date('actual_arrival')->nullable();
             $table->enum('status', array('processing', 'shipping', 'complete'));
             $table->text('description');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('sale_id')->nullable()->constrained('sales')->onDelete('cascade');
             $table->timestamps();
         });

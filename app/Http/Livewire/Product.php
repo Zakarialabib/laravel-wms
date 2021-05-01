@@ -6,12 +6,13 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Http\Request;
 use App\Models\Products;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Component
 {
     use WithPagination;
 
-    public $product_id, $search, $name ,$price, $description, $deleteId;
+    public $product_id, $search, $user_id, $name ,$price, $description, $deleteId;
     protected $queryString = ['search'];
 
     public function mount(): void
@@ -40,11 +41,13 @@ class Product extends Component
             'name' => 'required',
             'price' => 'required|integer|min:0',
             'description' => 'required',
+            'user_id' => '',
         ]);
         Products::updateOrCreate(['id' => $this->product_id], [
             'name' => $this->name,
             'price' => $this->price,
             'description' => $this->description, 
+            'user_id' => $this->user_id  = Auth::id(), 
         ]);
         session()->flash('message', 
             $this->product_id ? 'Product Updated Successfully.' : 'Product Created Successfully.');

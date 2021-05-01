@@ -11,7 +11,8 @@ class Products extends Model
         'id',
         'name',
         'price',
-        'description',        
+        'description', 
+        'user_id'  
     ];
     
     public function sale()

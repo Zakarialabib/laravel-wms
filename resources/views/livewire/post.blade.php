@@ -19,7 +19,6 @@
             @if($isOpen)
                 @include('post.create')
             @endif
-      
             <table class="table-auto w-full divide-y divide-gray-200">
                 <thead>
                     <tr class="bg-gray-100">
@@ -31,7 +30,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     @foreach($posts as $post)
                     <tr>
                         <td class="border px-4 py-2">{{ $post->id }}</td>

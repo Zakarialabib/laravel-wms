@@ -9,12 +9,13 @@ use App\Models\User;
 use App\Models\Sales;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
 
 class Delivery extends Component
 {
     use WithPagination;
 
-    public $delivery_id, $search, $sale_id, $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price, $deleteId;
+    public $delivery_id, $search, $sale_id, $user_id, $tracking_number, $recipient, $address, $expected_arrival, $actual_arrival, $status, $description, $price, $deleteId;
     protected $queryString = ['search'];
 
     public function mount(): void
@@ -52,7 +53,8 @@ class Delivery extends Component
             'expected_arrival' => 'required|date|after:tomorrow',
             'actual_arrival' => 'nullable|date|after:expected_arrival',
             'status' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'user_id' => ''
         ]);
         Deliveries::updateOrCreate(['id' => $this->delivery_id], [
             'sale_id' => $this->sale_id,
@@ -64,6 +66,7 @@ class Delivery extends Component
             'actual_arrival' => $this->actual_arrival,
             'status' => $this->status,
             'description' => $this->description, 
+            'user_id' => $this->user_id  = Auth::id(), 
         ]);
         return  session()->flash('message', 
             $this->delivery_id ? 'Deliveries Created Successfully' : 'Product Created Successfully.');
