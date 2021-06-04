@@ -41,7 +41,7 @@
                                     <option name="status" value='active'>{{ __('Active') }}</option>
                                     <option name="status" value='not-active'>{{ __('Not active') }}</option>
                                 </select>
-                                @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
+                                @error('status') <span class="text-red-550">{{ $message }}</span>@enderror
                             </div>
                             
                             <div class="w-full p-2">

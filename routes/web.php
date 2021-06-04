@@ -11,6 +11,8 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\FrontendSectionController;
+use App\Http\Livewire\FrontSection;
 use App\Http\Livewire\Transactions;
 use App\Http\Livewire\Stock;
 use App\Http\Livewire\Posts;
@@ -20,7 +22,6 @@ use App\Http\Livewire\ShowPosts;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Delivery;
 use App\Http\Livewire\Sale;
-
 
 
 /*
@@ -40,7 +41,17 @@ Route::get('/approval', [HomeController::class, 'approval'])->name('users.approv
 Route::post('contact-us', [ HomeController::class, 'saveContact' ])->name('contact-us');
 
 Route::middleware(['auth:sanctum', 'approved','verified'])->group(function () {
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::group(['middleware' => ['role:super-admin']], function () {
+        Route::resource('dashboard', DashboardController::class);
+        Route::get('frontsection', FrontSection::class);
+    });
+
+    Route::group(['middleware' => ['role:vendors']], function () {
+
+    });
+
+
 Route::get('/deliverie', [DeliveriesController::class, 'index'])->name('deliveries');
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
 Route::get('/pricings', [PricingController::class, 'index'])->name('pricings');
@@ -58,6 +69,7 @@ Route::get('customer', Customer::class)->name('customer');
 Route::get('stocks', Stock::class)->name('stock');
 Route::get('product', Product::class);
 Route::get('pricing', Pricings::class);
+
 
 Route::resource('deliveries', DeliveriesController::class);
 Route::resource('stock', StockController::class);

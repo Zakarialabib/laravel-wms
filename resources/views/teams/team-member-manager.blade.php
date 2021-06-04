@@ -97,7 +97,7 @@
                                 <div class="flex items-center">
                                     @if (Gate::check('removeTeamMember', $team))
                                         <!-- Cancel Team Invitation -->
-                                        <button class="cursor-pointer ml-6 text-sm text-red-500 focus:outline-none"
+                                        <button class="cursor-pointer ml-6 text-sm text-red-550 focus:outline-none"
                                                             wire:click="cancelTeamInvitation({{ $invitation->id }})">
                                             {{ __('Cancel') }}
                                         </button>
@@ -149,13 +149,13 @@
 
                                     <!-- Leave Team -->
                                     @if ($this->user->id === $user->id)
-                                        <button class="cursor-pointer ml-6 text-sm text-red-500" wire:click="$toggle('confirmingLeavingTeam')">
+                                        <button class="cursor-pointer ml-6 text-sm text-red-550" wire:click="$toggle('confirmingLeavingTeam')">
                                             {{ __('Leave') }}
                                         </button>
 
                                     <!-- Remove Team Member -->
                                     @elseif (Gate::check('removeTeamMember', $team))
-                                        <button class="cursor-pointer ml-6 text-sm text-red-500" wire:click="confirmTeamMemberRemoval('{{ $user->id }}')">
+                                        <button class="cursor-pointer ml-6 text-sm text-red-550" wire:click="confirmTeamMemberRemoval('{{ $user->id }}')">
                                             {{ __('Remove') }}
                                         </button>
                                     @endif

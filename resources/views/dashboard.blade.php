@@ -5,13 +5,13 @@
         </h2>
     </x-slot>
     <div>
-        <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
+        {{-- <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
             <livewire:transactions />
-        </div>
+        </div> --}}
         <div class="py-12">
             <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
                 <div class="w-full mx-auto py-10 sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    <div class="overflow-hidden shadow-xl sm:rounded-lg">
 
                         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
                             <div class="p-6">
@@ -71,7 +71,6 @@
                             </div>
                             <div class="p-6 border-t border-gray-200">
                                 <div class="flex items-center">
-
                                     <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="">Total
                                             Customers</a></div>
                                 </div>
@@ -100,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>ß
+                        </div>
                     </div>
                 </div>
             </div>

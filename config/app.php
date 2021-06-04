@@ -169,6 +169,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
        //'Illuminate\Translation\TranslationServiceProvider',
        'Barryvdh\TranslationManager\TranslationServiceProvider',
+       Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
           /*
          * Application Service Providers...
          */

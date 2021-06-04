@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <x-jet-authentication-card-logo class="block h-32 w-auto"  />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

@@ -25,7 +25,7 @@
                                     <option value="{{ $sale->id }}">{{ $sale->id }}</option>
                                 @endforeach
                             </select>
-                            @error('sale_id') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('sale_id') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
 
                         <div class="w-1/2 p-2">
@@ -33,7 +33,7 @@
                             <input :value="old('tracking_number')"
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="text" name="tracking_number" wire:model="tracking_number">
-                            @error('tracking_number') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('tracking_number') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                     </div>
                     <div class="flex flex-wrap -m-2">
@@ -42,14 +42,14 @@
                             <input :value="old('recipient')"
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="text" name="recipient" wire:model="recipient">
-                            @error('recipient') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('recipient') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/2 p-2">
                             <label for="price">{{ __('Price') }}* </label>
                             <input :value="old('price')"
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="text" name="price" wire:model="price">
-                            @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('price') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,7 +57,7 @@
                         <input :value="old('address')"
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                             type="text" name="address" wire:model="address">
-                        @error('address') <span class="text-red-500">{{ $message }}</span>@enderror
+                        @error('address') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
                     <div class="flex flex-wrap -m-2">
                         <div class="w-1/3 p-2">
@@ -65,7 +65,7 @@
                             <input :value="old('expected_arrival')"
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="date" name="expected_arrival" wire:model="expected_arrival">
-                            @error('expected_arrival') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('expected_arrival') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/3 p-2">
                             <label for="status">{{ __('Status') }}* </label>
@@ -78,14 +78,14 @@
                                 <option name="status" value='{{App\Models\Deliveries::STATUS_Completed}}'>{{ __('Completed') }}</option>
                                 <option name="status" value='{{App\Models\Deliveries::STATUS_Returned}}'>{{ __('Returned') }}</option>
                             </select>
-                            @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('status') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/3 p-2">
                             <label for="actual_arrival">{{ __('Actual Arrival') }}: </label>
                             <input :value="old('actual_arrival')"
                                 class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                 type="date" name="actual_arrival" wire:model="actual_arrival">
-                            @error('actual_arrival') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('actual_arrival') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                         <textarea :value="old('description')"
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                             type="text" name="description" wire:model="description"></textarea>
-                        @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
+                        @error('description') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="form-group">

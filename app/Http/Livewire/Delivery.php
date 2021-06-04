@@ -31,7 +31,7 @@ class Delivery extends Component
      $products = Products::all();
      $users = User::all();
      $sales = Sales::all();
-     
+
      $this->deliveries = Deliveries::paginate(5);
         return view('livewire.delivery', compact('sales','users','products'),[
             'deliveries' => $this->search === null ?
@@ -50,7 +50,7 @@ class Delivery extends Component
             'recipient' => 'required',
             'address' => 'required',
             'price' => 'required',
-            'expected_arrival' => 'required|date|after:tomorrow',
+            'expected_arrival' => 'required|date',
             'actual_arrival' => 'nullable|date|after:expected_arrival',
             'status' => 'required',
             'description' => 'required',

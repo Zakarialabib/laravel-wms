@@ -3,9 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 use Illuminate\Http\Request;
 
-class CheckAdmin
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,6 +17,10 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
+        // if (!Auth::check()) {
+        //     return redirect()->route('login');
+        // }
+
         if (!auth()->user()->admin) {
             return redirect()->route('dashboard');
         }

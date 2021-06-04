@@ -14,15 +14,14 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
-            $table->foreignId('vendor_id')->nullable()->constrained('vendors')->onDelete('cascade');
+            $table->increments('id');
             $table->string('reference');
             $table->integer('status');
             $table->integer('method');
             $table->decimal('paid_amount', 11, 2);
             $table->decimal('due', 11, 2);
             $table->text('note');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -32,7 +32,7 @@
                                             <option value="{{ $user->id }}">{{ $user->name }}</option>
                                         @endforeach
                                     </select>
-                                    @error('user_id') <span class="text-red-500">{{ $message }}</span>@enderror
+                                    @error('user_id') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
                                 <div class="w-1/2 p-2">
                                     <label for="status">{{ __('Status') }}* </label>
@@ -45,7 +45,7 @@
                                         <option name="status" value='{{App\Models\Sales::STATUS_Completed}}'>{{ __('Completed') }}</option>
                                         <option name="status" value='{{App\Models\Sales::STATUS_Decline}}'>{{ __('Decline') }}</option>
                                     </select>
-                                    @error('status') <span class="text-red-500">{{ $message }}</span>@enderror
+                                    @error('status') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
 
                                 <div class="w-1/2 p-2">
@@ -58,7 +58,7 @@
                                                 {{ $product->id }}</option>
                                         @endforeach
                                     </select>
-                                    @error('product_id') <span class="text-red-500">{{ $message }}</span>@enderror
+                                    @error('product_id') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
 
                                 <div class="w-1/2 p-2">
@@ -66,7 +66,7 @@
                                     <input
                                         class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                         type="text" name="quantity" wire:model="quantity">
-                                    @error('quantity') <span class="text-red-500">{{ $message }}</span>@enderror
+                                    @error('quantity') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
 
                                 <div class="w-1/2 p-2">
@@ -74,7 +74,7 @@
                                     <input
                                         class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                         type="text" name="sale_number" wire:model="sale_number">
-                                    @error('sale_number') <span class="text-red-500">{{ $message }}</span>@enderror
+                                    @error('sale_number') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
 
                                 {{-- <div class="w-full p-2">
@@ -95,7 +95,7 @@
                                                     @endforeach
                                                 </select>
                                                 @error('product_id.' . $value) <span
-                                                    class="text-red-500">{{ $message }}</span>@enderror
+                                                    class="text-red-550">{{ $message }}</span>@enderror
                                             </div>
                                             <div class="w-1/2 p-2">
                                                 <input type="quantity"
@@ -103,7 +103,7 @@
                                                     wire:model="quantity.{{ $value }}"
                                                     placeholder="Enter quantity">
                                                 @error('quantity.' . $value) <span
-                                                    class="text-red-500">{{ $message }}</span>@enderror
+                                                    class="text-red-550">{{ $message }}</span>@enderror
                                             </div>
                                             <div class="w-full p-2">
                                                 <button
@@ -128,7 +128,7 @@
                 <h3 class="panel-heading">{{ __('Sale list') }}</h3>
 
                 <input type="text" wire:model="search"
-                    class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline"
+                    class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3  my-5  ocus:shadow-outline"
                     placeholder="Recherche par Nom Client" />
 
                 <table class="table-auto w-full divide-y divide-gray-200">
@@ -186,7 +186,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $sales->links('layouts.tailwind') }}
+                {{-- {{ $sales->links('layouts.tailwind') }} --}}
             </div>
         </div>
     </div>

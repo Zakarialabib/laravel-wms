@@ -20,7 +20,7 @@
                         <input
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                             type="text" name="region" :value="old('region')" wire:model="region">
-                        @error('region') <span class="text-red-500">{{ $message }}</span>@enderror
+                        @error('region') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="w-1/2 p-2">
@@ -28,7 +28,7 @@
                         <input
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                             type="text" name="city" :value="old('city')" wire:model="city">
-                        @error('city') <span class="text-red-500">{{ $message }}</span>@enderror
+                        @error('city') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="w-1/2 p-2">
@@ -36,7 +36,7 @@
                         <input
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                             type="text" name="price" :value="old('price')" wire:model="price">
-                        @error('price') <span class="text-red-500">{{ $message }}</span>@enderror
+                        @error('price') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@
         </div>
     </div>
     <input type="text" wire:model="search"
-        class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline"
+        class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3  my-5  ocus:shadow-outline"
         placeholder="Recherche par Nom Client" />
     <div>
         <div class="">

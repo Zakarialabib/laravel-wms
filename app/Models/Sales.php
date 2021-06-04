@@ -26,15 +26,15 @@ class Sales extends Model
         return $this->hasOne(User::class,'user_id');
     }
 
-    public function product()
+    public function products()
     {
-        return $this->hasMany(Products::class,'product_id');
+        return $this->hasMany(Products::class,'product_id','id');
     }
 
-    public function items()
-    {
-        return $this->belongsToMany(Product::class,'sale_items','sale_id','product_id')->withPivot('quantity','price');
-    }
+    // public function items()
+    // {
+    //     return $this->belongsToMany(Product::class,'sale_items','sale_id','product_id')->withPivot('quantity','price');
+    // }
 
     public function delivery()
     {

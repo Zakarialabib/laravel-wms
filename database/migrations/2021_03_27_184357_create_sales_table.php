@@ -12,10 +12,12 @@ class CreateSalesTable extends Migration
 		$table->id();
         $table->string('sale_number');
 		$table->integer('product_id');
-        $table->enum('status', ['pending','processing','completed','decline'])->default('pending');		$table->integer('quantity');
+        $table->integer('status');
+        $table->integer('quantity');
         $table->boolean('is_paid')->default(false);
         $table->float('grand_total');
         $table->integer('item_count');
+        $table->text('message');
         $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
         $table->timestamps();
         });

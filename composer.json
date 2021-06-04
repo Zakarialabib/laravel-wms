@@ -24,6 +24,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
+        "livewire-ui/modal": "^0.1.1",
         "livewire/livewire": "^2.0",
         "owenvoke/blade-fontawesome": "^1.6",
         "spatie/laravel-permission": "^3.17",
@@ -31,6 +32,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
+        "barryvdh/laravel-ide-helper": "^2.10",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",

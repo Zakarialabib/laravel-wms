@@ -4,22 +4,31 @@ module.exports = {
     purge: [
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
     ],
-
     theme: {
-      
             screens: {
-                xs: '350',
+                xs: '350px',
                 sm: '480px',
                 md: '768px',
                 lg: '976px',
                 xl: '1280px',
               },
-                extend: {
+            extend: {
             colors: {
                 green: {
-                    550: '#25D55F',
+                    550: '#1EA813',
+                },
+                black:{
+                    500: '#262626',
+                },
+                blue:{
+                    550: '#131DAA',
+                },
+                red:{
+                    550: '#AA131D'
                 },
             },  
         },  

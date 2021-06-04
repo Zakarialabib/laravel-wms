@@ -17,13 +17,11 @@ class Sale extends Component
 {
     use WithPagination;
 
-    public $sale_id, $product_id , $sale_number ,$user_id, $quantity ,$status, $search,$deleteId;
+    public $sale_id, $product_id , $sale_number ,$user_id, $quantity ,$status, $search, $deleteId;
     protected $queryString = ['search'];
     public $updateMode = false;
     // public $inputs = [];
     // public $i = 1;
-
-
 
     public function mount(): void
     {

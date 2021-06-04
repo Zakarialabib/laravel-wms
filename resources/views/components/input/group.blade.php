@@ -26,7 +26,7 @@
             {{ $slot }}
 
             @if ($error)
-                <div class="mt-1 text-red-500 text-sm">{{ $error }}</div>
+                <div class="mt-1 text-red-550 text-sm">{{ $error }}</div>
             @endif
 
             @if ($helpText)
@@ -44,7 +44,7 @@
             {{ $slot }}
 
             @if ($error)
-                <div class="mt-1 text-red-500 text-sm">{{ $error }}</div>
+                <div class="mt-1 text-red-550 text-sm">{{ $error }}</div>
             @endif
 
             @if ($helpText)

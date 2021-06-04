@@ -35,7 +35,7 @@
                                             @endforeach
                                         </select>
                                         @error('product_id') <span
-                                            class="text-red-500">{{ $message }}</span>@enderror
+                                            class="text-red-550">{{ $message }}</span>@enderror
                                     </div>
                                     <div class="w-1/2 p-2">
                                         <label for="quantity">{{ __('Quantity') }}* </label>
@@ -43,7 +43,7 @@
                                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
                                             type="text" name="quantity" wire:model="quantity">
                                         @error('quantity') <span
-                                            class="text-red-500">{{ $message }}</span>@enderror
+                                            class="text-red-550">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -59,7 +59,7 @@
                     <h3 class="panel-heading">{{ __('Stock list') }}</h3>
 
                     <input type="text" wire:model="search"
-                        class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-blue-900 my-5  ocus:shadow-outline"
+                        class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3  my-5  ocus:shadow-outline"
                         placeholder="Recherche par Nom Client" />
 
                     <table class="table-auto w-full divide-y divide-gray-200">

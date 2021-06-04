@@ -10,7 +10,6 @@ use App\Models\Setting;
 use App\Traits\FlashMessages;
 
 
-
 class SettingController extends BaseController
 {
     use UploadAble;

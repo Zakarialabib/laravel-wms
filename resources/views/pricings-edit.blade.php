@@ -1,7 +1,7 @@
 <x-app-layout>
 <x-slot name="header">
     <h2 class="font-semibold justify-center flex text-xl text-gray-800 leading-tight">
-    Modification du Tarif
+    Edit Pricing
     </h2>
 </x-slot>
 <div class="container">

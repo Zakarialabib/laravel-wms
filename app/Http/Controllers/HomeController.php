@@ -10,7 +10,6 @@ use Mail;
 class HomeController extends Controller
 {
    
-
     public function index()
     {
         $setting = Setting::all();

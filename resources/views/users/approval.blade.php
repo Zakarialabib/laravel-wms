@@ -3,7 +3,7 @@
 @section('content')   
 <div class="bg-green-550 h-screen">
         <div class=" container mx-auto flex flex-col px-5 py-24 justify-center items-center">
-            <x-jet-authentication-card-logo />
+            <x-jet-authentication-card-logo class="block h-32 w-auto"  />
           <div class="w-full md:w-2/3 flex flex-col mb-16 items-center mt-5 text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">En attente d'approbation</h1>
             <p class="mb-8 leading-relaxed">Votre compte attend l'approbation de notre administrateur, Veuillez réessayer plus tard.
