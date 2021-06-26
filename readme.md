@@ -1,7 +1,7 @@
-<h1>Warehouse and Delivery System with Laravel 8 Jetstream Livewire</h1>
+<h1>Warehouse and Delivery System with TALL STACK - JETSTREAM AUTH </h1>
 <p>
-First of all just run these commands:
-</p>
+just run the commands below 
+</p> 
 <p>
 Run 'composer install' to install the PHP dependencies<br>
 Run 'npm install to install Node dependecies<br>
