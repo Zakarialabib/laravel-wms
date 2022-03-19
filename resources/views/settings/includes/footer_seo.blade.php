@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="footer_copyright_text">Footer Copyright Text</label>
                 <textarea
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     rows="4"
                     placeholder="Enter footer copyright text"
                     id="footer_copyright_text"
@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="control-label" for="seo_meta_title">SEO Meta Title</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter seo meta title for store"
                     id="seo_meta_title"
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label class="control-label" for="seo_meta_description">SEO Meta Description</label>
                 <textarea
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     rows="4"
                     placeholder="Enter seo meta description for store"
                     id="seo_meta_description"

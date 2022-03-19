@@ -15,7 +15,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Logo</label>
-                        <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
+                        <input class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" type="file" name="site_logo" onchange="loadFile(event,'logoImg')"/>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label class="control-label">Site Favicon</label>
-                        <input class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
+                        <input class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" type="file" name="site_favicon" onchange="loadFile(event,'faviconImg')"/>
                     </div>
                 </div>
             </div>

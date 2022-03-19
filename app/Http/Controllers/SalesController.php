@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Sales;
+use App\Models\Sale;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Deliveries;
@@ -39,7 +39,7 @@ class SalesController extends Controller
 
     public function edit($id)
     {
-        $sale = Sales::find($id);
+        $sale = Sale::find($id);
         $users = User::all();
         return view('sales-edit', compact('sale','users'));
     }
@@ -53,7 +53,7 @@ class SalesController extends Controller
             'quantity' => 'required|integer|min:0'
         ]);
 
-        $sale = Sales::find($id);
+        $sale = Sale::find($id);
         $sale->product_id = $request->get('product_id');
         $sale->user_id = $request->get('user_id');
         $sale->status = $request->get('status');
@@ -65,7 +65,7 @@ class SalesController extends Controller
 
     public function destroy($id)
     {
-        $sale = Sales::find($id);
+        $sale = Sale::find($id);
         try{
             $sale->delete();
         } catch(\Illuminate\Database\QueryException $ex){
@@ -82,7 +82,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $sales = Sales::all();
+        $sales = Sale::all();
         $deliveries = Deliveries::all();
         $products = Products::all();
         $users = User::all();

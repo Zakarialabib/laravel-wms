@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Sales;
+use App\Models\Sale;
 
 class ShowSale extends Component
 {
@@ -11,7 +11,7 @@ class ShowSale extends Component
 
     public function mount($id)
     {
-        $this->products = Sales::find($id);
+        $this->products = Sale::find($id);
     }
 
     public function render()
@@ -25,7 +25,7 @@ class ShowSale extends Component
             'message' => '',
             ]);
     
-            Sales::updateOrCreate(['id' => $this->sale_id], [
+            Sale::updateOrCreate(['id' => $this->sale_id], [
                 'message' => $this->message ,
             ]);
     

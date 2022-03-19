@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="site_name">Site Name</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter site name"
                     id="site_name"
@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="control-label" for="site_title">Site Title</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter site title"
                     id="site_title"
@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="control-label" for="default_email_address">Default Email Address</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="email"
                     placeholder="Enter store default email address"
                     id="default_email_address"
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label class="control-label" for="currency_code">Currency Code</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter store currency code"
                     id="currency_code"
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="control-label" for="currency_symbol">Currency Symbol</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter store currency symbol"
                     id="currency_symbol"

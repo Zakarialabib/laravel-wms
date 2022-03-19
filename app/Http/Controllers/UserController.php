@@ -22,8 +22,7 @@ class UserController extends Controller
     {
         $users = User::whereNull('approved_at')->get();
         $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('users.index',compact('data'));
     } 
     
     public function approve($user_id)

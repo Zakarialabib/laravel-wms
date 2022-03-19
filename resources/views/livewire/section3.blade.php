@@ -5,7 +5,7 @@
             <div class="w-1/2 p-2">
                 <label for="">{{ __('Offer Title') }}*</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                     type="text" name="" wire:model="">
                 @error('') <span class="text-red-550">{{ $message }}</span>@enderror
             </div>
@@ -16,14 +16,14 @@
             <div class="w-1/2 p-2">
                 <label for=" ">{{ __('Offer Image') }}* </label>
                 <input type="file"
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                     id=" " wire:model=" ">
                 @error(' ') <span class="text-red-550">{{ $message }}</span>@enderror
             </div>
             {{-- <div class="w-1/2 p-2">
                                         <label for="section_type">{{ __('Section Type') }}*</label>
                                         <input
-                                        class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                        class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                         type="text" name="section_type" wire:model="section_type">                                        
                                         @error('section_type') <span
                                             class="text-red-550">{{ $message }}</span>@enderror

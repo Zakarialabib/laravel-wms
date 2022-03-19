@@ -7,7 +7,7 @@
             <div class="form-group">
                 <label class="control-label" for="social_facebook">Facebook Profile</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter facebook profile link"
                     id="social_facebook"
@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="control-label" for="social_twitter">Twitter Profile</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter twitter profile link"
                     id="social_twitter"
@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="control-label" for="social_instagram">Instagram Profile</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter instagram profile link"
                     id="social_instagram"
@@ -40,7 +40,7 @@
             <div class="form-group">
                 <label class="control-label" for="social_linkedin">LinkedIn Profile</label>
                 <input
-                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" 
+                    class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" 
                     type="text"
                     placeholder="Enter linkedin profile link"
                     id="social_linkedin"

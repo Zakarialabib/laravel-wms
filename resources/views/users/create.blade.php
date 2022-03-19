@@ -36,13 +36,13 @@
                     <div class="col-span-3 sm:col-span-3">
                         <strong>Nom:</strong>
 
-                        {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full']) !!}
+                        {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"']) !!}
                     </div>
 
                     <div class="col-span-3 sm:col-span-3">
                         <strong>Email:</strong>
 
-                        {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full']) !!}
+                        {!! Form::text('email', null, ['placeholder' => 'Email', 'class' => 'p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"']) !!}
 
                     </div>
 
@@ -50,24 +50,24 @@
 
                         <strong>Téléphone:</strong>
 
-                        {!! Form::text('phone', null, ['placeholder' => 'Phone', 'class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full']) !!}
+                        {!! Form::text('phone', null, ['placeholder' => 'Phone', 'class' => 'p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"']) !!}
 
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <strong>Adresse:</strong>
-                        {!! Form::text('address', null, ['placeholder' => 'Address', 'class' => 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full']) !!}
+                        {!! Form::text('address', null, ['placeholder' => 'Address', 'class' => 'p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"']) !!}
                     </div>
 
 
                     <div class="col-span-6 sm:col-span-3">
                         <strong>Mot de passe:</strong>
-                        <x-password name="password" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" />
+                        <x-password name="password" class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" />
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <strong>Confirmation du Mot de passe:</strong>
-                        <x-password name="confirm-password" id="confirm-password" type="password" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full" />   
+                        <x-password name="confirm-password" id="confirm-password" type="password" class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500"" />   
                 </div>
 
                     <div class="col-span-12 sm:col-span-6">

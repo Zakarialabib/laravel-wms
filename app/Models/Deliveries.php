@@ -28,7 +28,7 @@ class Deliveries extends Model
 
     public function sales()
     {
-        return $this->belongsToMany(Sales::class);
+        return $this->belongsToMany(Sale::class);
     }
 
     public function products()

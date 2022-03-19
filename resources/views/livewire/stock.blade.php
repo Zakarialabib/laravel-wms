@@ -40,7 +40,7 @@
                                     <div class="w-1/2 p-2">
                                         <label for="quantity">{{ __('Quantity') }}* </label>
                                         <input
-                                            class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                            class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                             type="text" name="quantity" wire:model="quantity">
                                         @error('quantity') <span
                                             class="text-red-550">{{ $message }}</span>@enderror

@@ -40,10 +40,10 @@
                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                         name="status">
                                         <option></option>
-                                        <option name="status" value='{{App\Models\Sales::STATUS_Pending}}'>{{ __('Pending') }}</option>
-                                        <option name="status" value='{{App\Models\Sales::STATUS_Processing}}'>{{ __('Processing') }}</option>
-                                        <option name="status" value='{{App\Models\Sales::STATUS_Completed}}'>{{ __('Completed') }}</option>
-                                        <option name="status" value='{{App\Models\Sales::STATUS_Decline}}'>{{ __('Decline') }}</option>
+                                        <option name="status" value='{{App\Models\Sale::STATUS_Pending}}'>{{ __('Pending') }}</option>
+                                        <option name="status" value='{{App\Models\Sale::STATUS_Processing}}'>{{ __('Processing') }}</option>
+                                        <option name="status" value='{{App\Models\Sale::STATUS_Completed}}'>{{ __('Completed') }}</option>
+                                        <option name="status" value='{{App\Models\Sale::STATUS_Decline}}'>{{ __('Decline') }}</option>
                                     </select>
                                     @error('status') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
@@ -64,7 +64,7 @@
                                 <div class="w-1/2 p-2">
                                     <label for="quantity">{{ __('Quantity') }}* </label>
                                     <input
-                                        class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                        class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                         type="text" name="quantity" wire:model="quantity">
                                     @error('quantity') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
@@ -72,47 +72,11 @@
                                 <div class="w-1/2 p-2">
                                     <label for="sale_number">{{ __('Sale number') }}* </label>
                                     <input
-                                        class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                        class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                         type="text" name="sale_number" wire:model="sale_number">
                                     @error('sale_number') <span class="text-red-550">{{ $message }}</span>@enderror
                                 </div>
 
-                                {{-- <div class="w-full p-2">
-                                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold w-12 rounded"
-                                        wire:click.prevent="add({{ $i }})">Add</button>
-                                </div>
-
-                                @foreach ($inputs as $key => $value)
-                                    <div class=" add-input">
-                                        <div class="flex flex-wrap -m-2">
-                                            <div class="w-1/2 p-2">
-                                                <select name="product_id" wire:model="product_id.{{ $value }}"
-                                                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                                    <option></option>
-                                                    @foreach ($products as $product)
-                                                        <option value="{{ $product->id }}">{{ $product->name }} -
-                                                            {{ $product->id }}</option>
-                                                    @endforeach
-                                                </select>
-                                                @error('product_id.' . $value) <span
-                                                    class="text-red-550">{{ $message }}</span>@enderror
-                                            </div>
-                                            <div class="w-1/2 p-2">
-                                                <input type="quantity"
-                                                    class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
-                                                    wire:model="quantity.{{ $value }}"
-                                                    placeholder="Enter quantity">
-                                                @error('quantity.' . $value) <span
-                                                    class="text-red-550">{{ $message }}</span>@enderror
-                                            </div>
-                                            <div class="w-full p-2">
-                                                <button
-                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold w-12 rounded"
-                                                    wire:click.prevent="remove({{ $key }})">remove</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach --}}
 
                             <div class="w-full block">
                                 <button
@@ -162,10 +126,10 @@
                                 <td class="border-b border-gray-200  text-sm">{{ $user->name }} </td>
                                 <td class="border-b border-gray-200  text-sm"> {{ $sale->quantity }} </td>
                                 <td class="border-b border-gray-200  text-sm">
-                                    @if($sale->status == App\Models\Sales::STATUS_Pending)<span class="">{{__('Pending')}}</span>
-                                    @elseif($sale->status == App\Models\Sales::STATUS_Processing)<span class="">{{__('Processing')}}</span>
-                                    @elseif($sale->status == App\Models\Sales::STATUS_Completed)<span class="">{{__('Completed')}}</span>
-                                    @elseif($sale->status == App\Models\Sales::STATUS_Decline)<span class="">{{__('Declined')}}</span>
+                                    @if($sale->status == App\Models\Sale::STATUS_Pending)<span class="">{{__('Pending')}}</span>
+                                    @elseif($sale->status == App\Models\Sale::STATUS_Processing)<span class="">{{__('Processing')}}</span>
+                                    @elseif($sale->status == App\Models\Sale::STATUS_Completed)<span class="">{{__('Completed')}}</span>
+                                    @elseif($sale->status == App\Models\Sale::STATUS_Decline)<span class="">{{__('Declined')}}</span>
                                     @endif
                                 </td>
                                 <td class="border-b border-gray-200  text-sm">{{ $sale->created_at }}</td>
@@ -173,7 +137,9 @@
                                 <td class="border inline-flex px-3 py-3">
                                     {{-- @can('sales-delete') --}}
 
-                                    <a href=""
+                                    <a href="{{ route('message_index', ['sale' => $sale->id]) }}"
+                                        class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold px-2 py-2 rounded">{{ __('Messages') }}</a>
+                                        <a href=""
                                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 py-2 rounded">{{ __('Edit') }}</a>
 
                                          {{--   <button wire:click="edit({{ $sale->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded">Modifier</button> --}}

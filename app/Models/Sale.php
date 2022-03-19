@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sales extends Model
+class Sale extends Model
 {
     const STATUS_Pending = 1;
     const STATUS_Processing = 2; 
@@ -18,7 +18,8 @@ class Sales extends Model
         'sale_number',
         'product_id',
         'grand_total',
-        'user_id'
+        'user_id',
+        'message_id'
     ];
 
     public function user()
@@ -31,10 +32,10 @@ class Sales extends Model
         return $this->hasMany(Products::class,'product_id','id');
     }
 
-    // public function items()
-    // {
-    //     return $this->belongsToMany(Product::class,'sale_items','sale_id','product_id')->withPivot('quantity','price');
-    // }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 
     public function delivery()
     {

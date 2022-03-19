@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-3">
-                            <select name="replace" class="form-control">
+                            <select name="replace" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700">
                                 <option value="0">Append new translations</option>
                                 <option value="1">Replace existing translations</option>
                             </select>
@@ -57,7 +57,7 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="form-group">
                 <p>Choose a group to display the group translations. If no groups are visisble, make sure you have run the migrations and imported the translations.</p>
-                <select name="group" id="group" class="form-control group-select">
+                <select name="group" id="group" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700 group-select">
                     <?php foreach($groups as $key => $value): ?>
                         <option value="<?php echo $key ?>"<?php echo $key == $group ? ' selected':'' ?>><?php echo $value ?></option>
                     <?php endforeach; ?>
@@ -65,7 +65,7 @@
             </div>
             <div class="form-group">
                 <label>Enter a new group name and start edit translations in that group</label>
-                <input type="text" class="form-control" name="new-group" />
+                <input type="text" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700" name="new-group" />
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-default" name="add-group" value="Add and edit keys" />
@@ -76,7 +76,7 @@
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="form-group">
                     <label>Add new keys to this group</label>
-                    <textarea class="form-control" rows="3" name="keys" placeholder="Add 1 key per line, without the group prefix"></textarea>
+                    <textarea class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700" rows="3" name="keys" placeholder="Add 1 key per line, without the group prefix"></textarea>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Add keys" class="btn btn-primary">
@@ -93,7 +93,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="base-locale">Base Locale for Auto Translations</label>
-                            <select name="base-locale" id="base-locale" class="form-control">
+                            <select name="base-locale" id="base-locale" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700">
                                 <?php foreach ($locales as $locale): ?>
                                     <option value="<?= $locale ?>"><?= $locale ?></option>
                                 <?php endforeach; ?>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="form-group">
                             <label for="new-locale">Enter target locale key</label>
-                            <input type="text" name="new-locale" class="form-control" id="new-locale" placeholder="Enter target locale key" />
+                            <input type="text" name="new-locale" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700" id="new-locale" placeholder="Enter target locale key" />
                         </div>
                         <?php if(!config('laravel_google_translate.google_translate_api_key')): ?>
                             <p>
@@ -189,7 +189,7 @@
                         </p>
                         <div class="row">
                             <div class="col-sm-3">
-                                <input type="text" name="new-locale" class="form-control" />
+                                <input type="text" name="new-locale" class="btn border-gray-300 text-gray-700 dark:text-gray-300 active:bg-gray-50 active:text-gray-800 hover:text-gray-500 active:bg-dark-eval-1 active:text-gray-300 hover:text-gray-700" />
                             </div>
                             <div class="col-sm-2">
                                 <button type="submit" class="btn btn-default btn-block"  data-disable-with="Adding..">Add new locale</button>

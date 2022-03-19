@@ -31,7 +31,7 @@
                         <div class="w-1/2 p-2">
                             <label for="tracking_number">{{ __('tracking number') }}* </label>
                             <input :value="old('tracking_number')"
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="text" name="tracking_number" wire:model="tracking_number">
                             @error('tracking_number') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
@@ -40,14 +40,14 @@
                         <div class="w-1/2 p-2">
                             <label for="recipient">{{ __('Recipient') }}* </label>
                             <input :value="old('recipient')"
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="text" name="recipient" wire:model="recipient">
                             @error('recipient') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/2 p-2">
                             <label for="price">{{ __('Price') }}* </label>
                             <input :value="old('price')"
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="text" name="price" wire:model="price">
                             @error('price') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="address">{{ __('Address') }}* </label>
                         <input :value="old('address')"
-                            class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                            class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                             type="text" name="address" wire:model="address">
                         @error('address') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>
@@ -63,7 +63,7 @@
                         <div class="w-1/3 p-2">
                             <label for="expected_arrival">{{ __('Expected Arrival') }}* </label>
                             <input :value="old('expected_arrival')"
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="date" name="expected_arrival" wire:model="expected_arrival">
                             @error('expected_arrival') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
@@ -83,7 +83,7 @@
                         <div class="w-1/3 p-2">
                             <label for="actual_arrival">{{ __('Actual Arrival') }}: </label>
                             <input :value="old('actual_arrival')"
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="date" name="actual_arrival" wire:model="actual_arrival">
                             @error('actual_arrival') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
@@ -92,7 +92,7 @@
                     <div class="form-group">
                         <label for="description">{{ __('Description*') }}: </label>
                         <textarea :value="old('description')"
-                            class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                            class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                             type="text" name="description" wire:model="description"></textarea>
                         @error('description') <span class="text-red-550">{{ $message }}</span>@enderror
                     </div>

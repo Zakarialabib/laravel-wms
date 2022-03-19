@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Deliveries;
 use App\Models\Products;
 use App\Models\User;
-use App\Models\Sales;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +30,7 @@ class Delivery extends Component
      
      $products = Products::all();
      $users = User::all();
-     $sales = Sales::all();
+     $sales = Sale::all();
 
      $this->deliveries = Deliveries::paginate(5);
         return view('livewire.delivery', compact('sales','users','products'),[
@@ -43,7 +43,7 @@ class Delivery extends Component
 
     public function store()
     {
-        if (Sales::where('id')) {
+        if (Sale::where('id')) {
         $this->validate([
             'sale_id' => 'required|unique:deliveries',
             'tracking_number' => 'required',

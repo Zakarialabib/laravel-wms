@@ -21,7 +21,9 @@ use App\Http\Livewire\Customer;
 use App\Http\Livewire\ShowPosts;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Delivery;
-use App\Http\Livewire\Sale;
+use App\Http\Livewire\Messages;
+use App\Http\Livewire\CreateMessage;
+use App\Http\Livewire\Sales;
 
 
 /*
@@ -63,13 +65,14 @@ Route::post('/settings', 'App\Http\Controllers\SettingController@update')->name(
 Route::get('/transactions', Transactions::class);
 Route::get('post/{id}', ShowPosts::class)->name('posts-show');
 Route::get('post', Posts::class)->name('post');
-Route::get('sale', Sale::class)->name('sale');
+Route::get('sale', Sales::class)->name('sale');
 Route::get('deliveries', Delivery::class);
 Route::get('customer', Customer::class)->name('customer');
 Route::get('stocks', Stock::class)->name('stock');
 Route::get('product', Product::class);
 Route::get('pricing', Pricings::class);
-
+Route::get('message', Messages::class)->name('message_index');
+Route::get('message/create', CreateMessage::class)->name('message.create');
 
 Route::resource('deliveries', DeliveriesController::class);
 Route::resource('stock', StockController::class);

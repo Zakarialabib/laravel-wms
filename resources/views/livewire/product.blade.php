@@ -19,21 +19,21 @@
                         <div class="w-1/2 p-2">
                             <label for="name">{{ __('Name') }}* </label>
                             <input
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="text" name="name" :value="old('name')" wire:model="name">
                             @error('name') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-1/2 p-2">
                             <label for="price">{{ __('Price') }}* </label>
                             <input
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="text" name="price" :value="old('price')" wire:model="price">
                             @error('price') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
                         <div class="w-full p-2">
                             <label for="description">{{ __('Description') }}* </label>
                             <textarea
-                                class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full"
+                                class="p-3 leading-5 bg-white dark:bg-dark-eval-2 text-gray-700 dark:text-gray-300 rounded border border-gray-300 mb-1 text-sm w-full focus:shadow-outline-blue focus:border-purple-500""
                                 type="description" name="description" :value="old('description')"
                                 wire:model="description"></textarea>
                             @error('description') <span class="text-red-550">{{ $message }}</span>@enderror

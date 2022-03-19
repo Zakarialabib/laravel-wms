@@ -4,8 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Http\Request;
-use App\Models\Sales;
 use App\Models\Products;
+use App\Models\Sale;
 use Livewire\WithPagination;
 use App\Models\User;
 use App\Models\Deliveries;
@@ -13,7 +13,7 @@ use App\Models\Setting;
 use App\Http\Livewire\Field;
 use Illuminate\Support\Facades\Auth;
 
-class Sale extends Component
+class Sales extends Component
 {
     use WithPagination;
 
@@ -28,21 +28,10 @@ class Sale extends Component
         $this->search = request()->query('search', $this->search);
     }
 
-    // public function add($i)
-    // {
-    //     $i = $i + 1;
-    //     $this->i = $i;
-    //     array_push($this->inputs ,$i);
-    // }
-
-    // public function remove($i)
-    // {
-    //     unset($this->inputs[$i]);
-    // }
 
     public function render()
     {
-     ///   $this->sales = Sales::query()
+     ///   $this->sales = Sale::query()
         /// ->where('user_id', Auth::id());
 
         $deliveries = Deliveries::all();
@@ -50,11 +39,11 @@ class Sale extends Component
         $users = User::all();
         $settings = Setting::all();
 
-        $this->sales = Sales::paginate();
-        return view('livewire.sale', compact('settings','users','products','deliveries'),[
+        $this->sales = Sale::paginate();
+        return view('livewire.sales', compact('settings','users','products','deliveries'),[
             'sales' => $this->search === null ?
-            Sales::paginate() :
-            Sales::where('status', 'like', '%' . $this->search . '%')
+            Sale::paginate() :
+            Sale::where('status', 'like', '%' . $this->search . '%')
                 ->orderBy('created_at', 'desc')->paginate()
         ]);
     }
@@ -69,17 +58,13 @@ class Sale extends Component
     {
 
         $this->validate([
-            // 'product_id.0' => 'required',
-            // 'quantity.0' => 'required',
-            // 'product_id.*' => 'required',
-            // 'quantity.*' => 'required',
             'product_id' => 'required',
             'quantity' => 'required',
-            'sale_number' => 'required|unique:sales',
+            'sale_number' => 'required',
             'user_id' => '',
             'status' => 'required',
         ]);
-        Sales::updateOrCreate(['id' => $this->sale_id], [
+        Sale::updateOrCreate(['id' => $this->sale_id], [
             'product_id' => $this->product_id,
             'quantity' => $this->quantity,
             'status' => $this->status, 
@@ -87,18 +72,6 @@ class Sale extends Component
             'user_id' => $this->user_id  = Auth::id(), 
         ]);
 
-       // Sales::create($validatedDate);
-       
-        // foreach ($this->product_id as $key => $value) {
-        //     Sales::create([
-        //     'product_id' => $this->product_id[$key], 
-        //     'quantity' => $this->quantity[$key]
-        //     ]);
-        // }
-
-     //   $this->inputs = [];
-       //  $this->resetInputFields();
-      
        session()->flash('message', 
        $this->sale_id ? 'Sale Updated Successfully.' : 'Sale Created Successfully.');       
     }
@@ -123,7 +96,7 @@ class Sale extends Component
     public function delete()
 
     {
-        Sales::find($this->deleteId)->delete();
+        Sale::find($this->deleteId)->delete();
         session()->flash('message', 'Sale Deleted Successfully.');
 
     }

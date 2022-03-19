@@ -17,12 +17,12 @@ class Products extends Model
     
     public function sale()
     {
-        return $this->belongsToMany(Sales::class , 'sale_id' , 'id');
+        return $this->belongsToMany(Sale::class , 'sale_id' , 'id');
     }
 
     public function stocks()
     {
-        return $this->belongsToMany(Stocks::class, 'stock_id' , 'id');
+        return $this->belongsTo(Stocks::class);
     }
 
     public function stores()

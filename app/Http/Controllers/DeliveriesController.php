@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Deliveries;
-use App\Models\Sales;
+use App\Models\Sale;
 use App\Models\Products;
 use App\Models\User;
 
@@ -51,7 +51,7 @@ class DeliveriesController extends Controller
     public function index()
     {
         $deliveries = Deliveries::all();
-        $sales = Sales::all();
+        $sales = Sale::all();
         $products = Products::all();
         $users = User::all();
         

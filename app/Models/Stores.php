@@ -22,7 +22,7 @@ class Stores extends Model
 
     public function sale()
     {
-        return $this->HasMany(Sales::class ,'sale_id' , 'id');
+        return $this->HasMany(Sale::class ,'sale_id' , 'id');
     }
 
     public function products()
