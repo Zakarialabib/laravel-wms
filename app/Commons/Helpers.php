@@ -1,5 +1,6 @@
 <?php
 
+use Artesaos\SEOTools\Facades\SEOTools as SEO;
 
 
 
