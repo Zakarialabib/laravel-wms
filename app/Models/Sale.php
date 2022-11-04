@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    const STATUS_Pending = 1;
-    const STATUS_Processing = 2; 
-    const STATUS_Completed = 3;
-    const STATUS_Decline = 4;
+    private const STATUS_Pending = 1;
+    private const STATUS_Processing = 2;
+    private const STATUS_Completed = 3;
+    private const STATUS_Decline = 4;
 
     protected $fillable = [
         'id',

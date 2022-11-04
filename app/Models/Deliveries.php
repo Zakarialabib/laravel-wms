@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deliveries extends Model
 {
-    const STATUS_Processing = 1;
-    const STATUS_Shipping = 2; 
-    const STATUS_Completed = 3;
-    const STATUS_Returned = 4;
+    private const STATUS_Processing = 1;
+    private const STATUS_Shipping = 2;
+    private const STATUS_Completed = 3;
+    private const STATUS_Returned = 4;
 
     protected $fillable = [
         'id',
@@ -35,10 +35,9 @@ class Deliveries extends Model
     {
         return $this->hasMany(Products::class);
     }
+
     public function user()
     {
         return $this->hasOne(User::class);
     }
-
-
 }

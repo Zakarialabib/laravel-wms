@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Livreur extends Model
 {
     use HasFactory;
-
-    
 }

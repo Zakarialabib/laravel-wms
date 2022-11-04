@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class OrderItem extends Model
 {
     protected $guarded = [];
-    
-    public function product() {
+
+    public function product()
+    {
         return $this->belongsTo('App\Models\Product');
     }
 

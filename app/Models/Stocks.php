@@ -17,6 +17,4 @@ class Stocks extends Model
     {
         return $this->belongToMany(Products::class, 'product_id', 'id');
     }
-
-
 }

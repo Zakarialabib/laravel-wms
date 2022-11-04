@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class ProductOrder extends Model
 {
     protected $guarded = [];
-    
-    public function orderitems() {
+
+    public function orderItems()
+    {
         return $this->hasMany('App\Models\OrderItem');
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\Models\User');
     }
 
