@@ -7,14 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stores extends Model
 {
-
     protected $fillable = [
         'company_name',
         'balance',
         'status',
         'user_id' ,
     ];
-    
+
     public function user()
     {
         return $this->BelongsTo(User::class ,'user_id' , 'id');

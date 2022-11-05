@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
 {
-    
     protected $fillable = [
         'id',
         'name',
         'price',
-        'description', 
-        'user_id'  
+        'description',
+        'user_id'
     ];
-    
+
     public function sale()
     {
         return $this->belongsToMany(Sale::class , 'sale_id' , 'id');
@@ -29,5 +28,4 @@ class Products extends Model
     {
         return $this->belongsTo(Stores::class ,'store_id' , 'id');
     }
-
 }

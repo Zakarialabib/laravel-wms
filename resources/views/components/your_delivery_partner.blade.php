@@ -6,5 +6,5 @@
           Concentrez-vous sur vos ventes et TWITLY s'occupe du reste!
 </p>
     </div>
-    <img class="mt-36 object-cover bg-left" style="height: 80vh;width:100%" src="{{ asset('/public/img/section2.png') }}" alt=""> 
+    <img class="mt-36 object-cover bg-left" style="height: 80vh;width:100%" src="{{ asset('img/section2.png') }}" alt="">
   </div>

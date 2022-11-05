@@ -1,46 +1,65 @@
-<h1>Warehouse and Delivery System with TALL STACK - JETSTREAM AUTH </h1>
-<p>
-just run the commands below 
-</p> 
-<p>
-Run 'composer install' to install the PHP dependencies<br>
-Run 'npm install to install Node dependecies<br>
-cp .env.example .env<br>
-php artisan key:generate<br>
-php artisan migrate<br>
-</p>
+Warehouse and Delivery System with TALL STACK - JETSTREAM AUTH
+==============================================================
 
-<h3 align="center">Milestones :</h3>
-- Changing all Cruds wih Livewire real validation and SPa compnents  <br>
-- Permissions Management  <br>
-- Roles Management  <br>
-- Sales Management <br>
-- event listiners notifaction with web push, email or social media<br>
-- Check Deliveries status with Tracking code<br>
+Just run the commands below
 
+```sh
+# to install the PHP dependencies
+composer install
 
-<h3>Screenshots</h3>
-<p>coming soon</p>
+#to install Node dependecies
+npm install 
 
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+```
 
-<p align="center">
-<h3>Thanks to </h3><br>
-<a href="https://laravel.com">Laravel</a> <br>
-<a href="https://tailwindcss.com">tailwindcss</a><br>
-<a href="">AdminLTE</a><br>
-</p>
-    
+<br>
 
-<h3>Contributing</h3>
+### Milestones :
 
-<p>Thank you for considering contributing to this project!
-</p>
-<h3>Code of Conduct</h3>
-<p>In order to ensure that the Laravel community is welcoming to all, please review and abide by the Code of Conduct.</p>
+- [ ] Changing all Cruds wih Livewire real validation and SPa compnents  
+- [ ] Permissions Management  
+- [ ] Roles Management  
+- [ ] Sales Management  
+- [ ] event listiners notifaction with web push, email or social media  
+- [ ] Check Deliveries status with Tracking code
 
-<h3>Security Vulnerabilities</h3>
-<p>If you discover a security vulnerability within Laravel, please send a pull request. All security vulnerabilities will be promptly addressed.</p>
+<br>
 
-<h3>License</h3>
+### Screenshots
 
-<p>The Laravel framework is open-sourced software licensed under the Apache License 2.0.</p>
+coming soon
+
+<br>
+
+### Thanks to
+
+[Laravel](https://laravel.com)  
+[tailwindcss](https://tailwindcss.com)  
+AdminLTE
+
+<br>
+
+### Contributing
+
+Thank you for considering contributing to this project!
+
+<br>
+
+### Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the Code of Conduct.
+
+<br>
+
+### Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send a pull request. All security vulnerabilities will be promptly addressed.
+
+<br>
+
+### License
+
+The Laravel framework is open-sourced software licensed under the Apache License 2.0.

@@ -10,6 +10,8 @@ class Pricing extends Model
     use HasFactory;
 
     protected $fillable = [
-        'city', 'region', 'price'
+        'city',
+        'region',
+        'price',
     ];
 }
