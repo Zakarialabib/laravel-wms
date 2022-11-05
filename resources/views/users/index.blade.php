@@ -38,7 +38,7 @@
 
                         <tr>
 
-                            <td class="border">{{ ++$i }}</td>
+                            <td class="border">{{ $user->id }}</td>
                             <td class="border px-4 py-2">{{ $user->name }}</td>
                             <td class="border px-4 py-2">{{ $user->email }}</td>
                             <td class="border px-4 py-2">{{ $user->phone }}</td>
