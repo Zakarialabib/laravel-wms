@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customers extends Model
 {
-    protected $guard = ['id',
-        'name', 'phone', 'email', 'address', 'status',
+    protected $guard = [
+        'id',
+        'name',
+        'phone',
+        'email',
+        'address',
+        'status',
     ];
-
 
     public function sale()
     {

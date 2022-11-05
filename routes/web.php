@@ -25,7 +25,6 @@ use App\Http\Livewire\Messages;
 use App\Http\Livewire\CreateMessage;
 use App\Http\Livewire\Sales;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,37 +49,36 @@ Route::middleware(['auth:sanctum', 'approved','verified'])->group(function () {
     });
 
     Route::group(['middleware' => ['role:vendors']], function () {
-
+        //
     });
 
 
-Route::get('/deliverie', [DeliveriesController::class, 'index'])->name('deliveries');
-Route::get('/products', [ProductsController::class, 'index'])->name('products');
-Route::get('/pricings', [PricingController::class, 'index'])->name('pricings');
-Route::get('/deliveries/track', [DeliveriesController::class, 'orderTrack'])->name('order.track');
-Route::post('deliveries/track/order', [DeliveriesController::class, 'deliveryTrackOrder'])->name('delivery.track.order');
-Route::get('/settings', 'App\Http\Controllers\SettingController@index')->name('settings');
-Route::post('/settings', 'App\Http\Controllers\SettingController@update')->name('settings.update');
+    Route::get('/deliverie', [DeliveriesController::class, 'index'])->name('deliveries');
+    Route::get('/products', [ProductsController::class, 'index'])->name('products');
+    Route::get('/pricings', [PricingController::class, 'index'])->name('pricings');
+    Route::get('/deliveries/track', [DeliveriesController::class, 'orderTrack'])->name('order.track');
+    Route::post('deliveries/track/order', [DeliveriesController::class, 'deliveryTrackOrder'])->name('delivery.track.order');
+    Route::get('/settings', 'App\Http\Controllers\SettingController@index')->name('settings');
+    Route::post('/settings', 'App\Http\Controllers\SettingController@update')->name('settings.update');
 
-Route::get('/transactions', Transactions::class);
-Route::get('post/{id}', ShowPosts::class)->name('posts-show');
-Route::get('post', Posts::class)->name('post');
-Route::get('sale', Sales::class)->name('sale');
-Route::get('deliveries', Delivery::class);
-Route::get('customer', Customer::class)->name('customer');
-Route::get('stocks', Stock::class)->name('stock');
-Route::get('product', Product::class);
-Route::get('pricing', Pricings::class);
-Route::get('message', Messages::class)->name('message_index');
-Route::get('message/create', CreateMessage::class)->name('message.create');
+    Route::get('/transactions', Transactions::class);
+    Route::get('post/{id}', ShowPosts::class)->name('posts-show');
+    Route::get('post', Posts::class)->name('post');
+    Route::get('sale', Sales::class)->name('sale');
+    Route::get('deliveries', Delivery::class);
+    Route::get('customer', Customer::class)->name('customer');
+    Route::get('stocks', Stock::class)->name('stock');
+    Route::get('product', Product::class);
+    Route::get('pricing', Pricings::class);
+    Route::get('message', Messages::class)->name('message_index');
+    Route::get('message/create', CreateMessage::class)->name('message.create');
 
-Route::resource('deliveries', DeliveriesController::class);
-Route::resource('stock', StockController::class);
-Route::resource('products', ProductsController::class);
-Route::resource('pricings', PricingController::class);
-Route::resource('roles', RoleController::class);
-Route::resource('users', UserController::class);
+    Route::resource('deliveries', DeliveriesController::class);
+    Route::resource('stock', StockController::class);
+    Route::resource('products', ProductsController::class);
+    Route::resource('pricings', PricingController::class);
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
 
-Route::get('/users/{user_id}/approve', [UserController::class, 'approve'])->name('users.approve');
+    Route::get('/users/{user_id}/approve', [UserController::class, 'approve'])->name('users.approve');
 });
-
