@@ -73,10 +73,10 @@
                                 class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 wire:model="status" name="status">
                                 <option :value="old('status')"></option>
-                                <option name="status" value='{{App\Models\Deliveries::STATUS_Processing}}'>{{ __('Processing') }}</option>
-                                <option name="status" value='{{App\Models\Deliveries::STATUS_Shipping}}'>{{ __('Shipping') }}</option>
-                                <option name="status" value='{{App\Models\Deliveries::STATUS_Completed}}'>{{ __('Completed') }}</option>
-                                <option name="status" value='{{App\Models\Deliveries::STATUS_Returned}}'>{{ __('Returned') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_PROCESSING}}'>{{ __('Processing') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_SHIPPING}}'>{{ __('Shipping') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_COMPLETED}}'>{{ __('Completed') }}</option>
+                                <option name="status" value='{{App\Models\Deliveries::STATUS_RETURNED}}'>{{ __('Returned') }}</option>
                             </select>
                             @error('status') <span class="text-red-550">{{ $message }}</span>@enderror
                         </div>
@@ -154,10 +154,10 @@
                             <td class="border-b border-gray-200  text-sm">{{ $delivery->expected_arrival }}</td>
                             <td class="border-b border-gray-200  text-sm">{{ $delivery->actual_arrival }}</td>
                             <td class="border-b border-gray-200  text-sm">
-                                @if($delivery->status == App\Models\Deliveries::STATUS_Processing)<span class="">{{__('Processing')}}</span>
-                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Shipping)<span class="">{{__('Shipping')}}</span>
-                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Completed)<span class="">{{__('Completed')}}</span>
-                                @elseif($delivery->status == App\Models\Deliveries::STATUS_Returned)<span class="">{{__('Returned')}}</span>
+                                @if($delivery->status == App\Models\Deliveries::STATUS_PROCESSING)<span class="">{{__('Processing')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_SHIPPING)<span class="">{{__('Shipping')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_COMPLETED)<span class="">{{__('Completed')}}</span>
+                                @elseif($delivery->status == App\Models\Deliveries::STATUS_RETURNED)<span class="">{{__('Returned')}}</span>
                                 @endif
                                 {{ $delivery->status }}
                             </td>
