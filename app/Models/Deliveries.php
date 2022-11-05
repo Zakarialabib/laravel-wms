@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deliveries extends Model
 {
-    private const STATUS_Processing = 1;
-    private const STATUS_Shipping = 2;
-    private const STATUS_Completed = 3;
-    private const STATUS_Returned = 4;
+    public const STATUS_PROCESSING = 1;
+    public const STATUS_SHIPPING = 2;
+    public const STATUS_COMPLETED = 3;
+    public const STATUS_RETURNED = 4;
 
     protected $fillable = [
         'id',
