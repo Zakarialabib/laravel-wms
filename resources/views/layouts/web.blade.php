@@ -8,7 +8,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/public/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         html {
             scroll-behavior: smooth;
@@ -17,7 +17,7 @@
     </style>
     @livewireStyles
     <!-- Scripts -->
-    <script src="{{ asset('/public/js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -33,8 +33,8 @@
             document.getElementById("nav-content").classList.toggle("hidden");
         }
     </script>
-    <script src="{{ asset('/public/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('/public/js/popper.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/popper.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.js" defer=""></script>
     @livewireScripts
     <script>
